@@ -1,0 +1,2014 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_6dda6feab0344ed4af354c692b9ab0e5 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+    <script src="https://leaflet.github.io/Leaflet.heat/dist/leaflet-heat.js"></script>
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_6dda6feab0344ed4af354c692b9ab0e5" ></div>
+        
+</body>
+<script>    
+    
+            var map_6dda6feab0344ed4af354c692b9ab0e5 = L.map(
+                "map_6dda6feab0344ed4af354c692b9ab0e5",
+                {
+                    center: [-2.4607666699607846, 122.87346334823529],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_f0548804bd254981b940c4414d3fe753 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+            var heat_map_f1d65c1dab384572881f725f8c9c0471 = L.heatLayer(
+                [[-2.372368709, 140.3613281], [-2.372368709, 140.3613281], [-2.460181181, 140.3613281], [-2.460181181, 140.3613281], [-2.547987871, 140.625], [-5.178482088, 105.46875], [-5.266007883, 105.5566406], [-5.090944175, 105.5566406], [-0.7031073520000001, 122.9589844], [-2.635788574, 121.7285156], [-2.1967272419999997, 121.3769531], [-2.1967272419999997, 121.5527344], [-2.8113711930000003, 121.11328119999999], [-2.7235830830000003, 121.2890625], [-2.986927393, 121.5527344], [-2.986927393, 121.81640619999999], [-2.8113711930000003, 121.2011719], [-2.899152698, 122.16796869999999], [-2.899152698, 122.0800781], [-6.751896465, 107.6220703], [-0.69124716, 123.0029297], [0.776561675, 128.2763672], [0.776561675, 128.3203125], [0.735586803, 128.3203125], [0.735586803, 128.18847659999997], [0.735586803, 128.18847659999997], [0.735586803, 128.18847659999997], [0.776561675, 128.2324219], [0.8175478970000001, 128.18847659999997], [0.940574479, 128.18847659999997], [0.694623298, 128.18847659999997], [-0.081500068, 129.375], [-0.122232534, 130.29785159999997], [-0.081500068, 130.64941409999997], [-0.203662247, 130.3417969], [-0.040755884, 130.7373047], [-0.203662247, 131.3085937], [-0.040755884, 130.1220703], [-0.325718506, 130.20996090000003], [-0.285044883, 130.20996090000003], [-0.081500068, 131.0449219], [-0.40703027299999994, 129.85839840000003], [-0.44766838299999995, 129.85839840000003], [-0.40703027299999994, 129.9023437], [-0.40703027299999994, 129.85839840000003], [0.653671178, 128.0566406], [-0.747049145, 123.0029297], [-2.1967272419999997, 121.3330078], [-2.240639609, 121.5527344], [-3.250208562, 115.9277344], [-3.381823735, 116.1035156], [-3.381823735, 116.4111328], [-3.469557303, 116.0595703], [-3.337953961, 115.48828119999999], [-3.469557303, 116.19140619999999], [-3.469557303, 116.4111328], [-2.94304091, 116.23535159999999], [-3.294082228, 115.9277344], [-3.294082228, 115.9716797], [-3.557282727, 122.34375], [-3.5134210460000004, 122.2558594], [-3.557282727, 122.2558594], [-3.381823735, 122.21191409999999], [-3.425691524, 122.3876953], [-3.8204080830000002, 122.4316406], [-3.688855143, 122.2558594], [-3.337953961, 122.2998047], [-3.469557303, 122.16796869999999], [-3.381823735, 122.2558594], [-3.381823735, 122.2558594], [-3.864254616, 121.2890625], [-3.864254616, 121.3330078], [-3.8204080830000002, 121.2890625], [-3.864254616, 121.2890625], [-3.864254616, 121.2890625], [-3.864254616, 121.2890625], [-3.864254616, 121.2890625], [-3.250208562, 122.2558594], [-3.381823735, 122.34375], [-3.381823735, 122.34375], [-3.381823735, 122.34375], [-3.381823735, 122.34375], [-3.381823735, 122.34375], [-3.381823735, 122.34375], [-3.381823735, 122.34375], [-3.381823735, 122.34375], [-3.557282727, 122.21191409999999], [-2.767477951, 121.2890625], [-2.899152698, 122.0361328], [-4.214943141, 121.5966797], [-4.214943141, 121.46484369999999], [-4.258768357, 121.5527344], [-4.214943141, 121.640625], [-4.214943141, 121.6845703], [-4.258768357, 121.7285156], [-4.258768357, 121.6845703], [-4.214943141, 121.640625], [-5.441022304, 121.9482422], [-5.222246513, 122.0361328], [-5.178482088, 105.5126953], [-5.266007883, 105.5126953], [5.286397793, 95.51513672]],
+                {"blur": 15, "max": 1.0, "maxZoom": 18, "minOpacity": 0.5, "radius": 20}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+            var circle_48c3699c0f9d4e5da66fb80a1daf1b1c = L.circle(
+                [-2.372368709, 140.3613281],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_d514fb5fe90143febbb1e3afa98bb27f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6f6e66485ea44a44b6dddeb9459d341d = $(`<div id="html_6f6e66485ea44a44b6dddeb9459d341d" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_d514fb5fe90143febbb1e3afa98bb27f.setContent(html_6f6e66485ea44a44b6dddeb9459d341d);
+        
+
+        circle_48c3699c0f9d4e5da66fb80a1daf1b1c.bindPopup(popup_d514fb5fe90143febbb1e3afa98bb27f)
+        ;
+
+        
+    
+    
+            var circle_6f65c2a1f6074959bfbc17a29c5dad4f = L.circle(
+                [-2.372368709, 140.3613281],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_cfb79f593a3141f1885d51d3212f9222 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b86949b276324b539489111f07f97ecc = $(`<div id="html_b86949b276324b539489111f07f97ecc" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_cfb79f593a3141f1885d51d3212f9222.setContent(html_b86949b276324b539489111f07f97ecc);
+        
+
+        circle_6f65c2a1f6074959bfbc17a29c5dad4f.bindPopup(popup_cfb79f593a3141f1885d51d3212f9222)
+        ;
+
+        
+    
+    
+            var circle_4fff3877fc2c4662944573156d298bd1 = L.circle(
+                [-2.460181181, 140.3613281],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_cfcf1120aaa849e3b2d751a336c30657 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f09f1b00a0d842d7be0bf94efac2febb = $(`<div id="html_f09f1b00a0d842d7be0bf94efac2febb" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_cfcf1120aaa849e3b2d751a336c30657.setContent(html_f09f1b00a0d842d7be0bf94efac2febb);
+        
+
+        circle_4fff3877fc2c4662944573156d298bd1.bindPopup(popup_cfcf1120aaa849e3b2d751a336c30657)
+        ;
+
+        
+    
+    
+            var circle_806a7576341145dabaf8f21bb3415ca8 = L.circle(
+                [-2.460181181, 140.3613281],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_4460ac9ac4e24c74b15a3978fb1004e5 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7b35c0bd294646e993b7df081b5fa248 = $(`<div id="html_7b35c0bd294646e993b7df081b5fa248" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_4460ac9ac4e24c74b15a3978fb1004e5.setContent(html_7b35c0bd294646e993b7df081b5fa248);
+        
+
+        circle_806a7576341145dabaf8f21bb3415ca8.bindPopup(popup_4460ac9ac4e24c74b15a3978fb1004e5)
+        ;
+
+        
+    
+    
+            var circle_8c07ac025c754c36b39ed539848b542d = L.circle(
+                [-2.547987871, 140.625],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_77ea1f3ea9f94fe3afec5e47e2d120e1 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9dcac3592fc147f9b70d54361fd91d31 = $(`<div id="html_9dcac3592fc147f9b70d54361fd91d31" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_77ea1f3ea9f94fe3afec5e47e2d120e1.setContent(html_9dcac3592fc147f9b70d54361fd91d31);
+        
+
+        circle_8c07ac025c754c36b39ed539848b542d.bindPopup(popup_77ea1f3ea9f94fe3afec5e47e2d120e1)
+        ;
+
+        
+    
+    
+            var circle_34f8b519bf0348e3bac6ece54efde011 = L.circle(
+                [-5.178482088, 105.46875],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_5abb8e8ee71247d582738c306cf87ddb = L.popup({"maxWidth": "100%"});
+
+        
+            var html_68adad447dcf4207a3ab920cae78ea45 = $(`<div id="html_68adad447dcf4207a3ab920cae78ea45" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_5abb8e8ee71247d582738c306cf87ddb.setContent(html_68adad447dcf4207a3ab920cae78ea45);
+        
+
+        circle_34f8b519bf0348e3bac6ece54efde011.bindPopup(popup_5abb8e8ee71247d582738c306cf87ddb)
+        ;
+
+        
+    
+    
+            var circle_8f3c6ea0db134c91a7959e0027cf4da6 = L.circle(
+                [-5.266007883, 105.5566406],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_fc3a1f6edab040b88af2c70c38193d7b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_89986853f93947318a6d126fc64557ba = $(`<div id="html_89986853f93947318a6d126fc64557ba" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_fc3a1f6edab040b88af2c70c38193d7b.setContent(html_89986853f93947318a6d126fc64557ba);
+        
+
+        circle_8f3c6ea0db134c91a7959e0027cf4da6.bindPopup(popup_fc3a1f6edab040b88af2c70c38193d7b)
+        ;
+
+        
+    
+    
+            var circle_70baf814a20e4960b3042153c349a6ac = L.circle(
+                [-5.090944175, 105.5566406],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_1d22bc93067b4df0a8afe1c72a9c0d74 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8cb787bb799d4804878aa9e03ac26bae = $(`<div id="html_8cb787bb799d4804878aa9e03ac26bae" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_1d22bc93067b4df0a8afe1c72a9c0d74.setContent(html_8cb787bb799d4804878aa9e03ac26bae);
+        
+
+        circle_70baf814a20e4960b3042153c349a6ac.bindPopup(popup_1d22bc93067b4df0a8afe1c72a9c0d74)
+        ;
+
+        
+    
+    
+            var circle_c658e59839924d71a1a6b38037dfa078 = L.circle(
+                [-0.7031073520000001, 122.9589844],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_4f99854950d646818bcebc7f0b83a4e6 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_997fbaf92aee4413b33c49c0b07b8906 = $(`<div id="html_997fbaf92aee4413b33c49c0b07b8906" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_4f99854950d646818bcebc7f0b83a4e6.setContent(html_997fbaf92aee4413b33c49c0b07b8906);
+        
+
+        circle_c658e59839924d71a1a6b38037dfa078.bindPopup(popup_4f99854950d646818bcebc7f0b83a4e6)
+        ;
+
+        
+    
+    
+            var circle_ecb7ff5de1134bffae1848a5225abce5 = L.circle(
+                [-2.635788574, 121.7285156],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_49e2a2aa5a0b4f60bb1a0b4f580a6622 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_14f7c1d2bacc45c595921ccc23fcaef7 = $(`<div id="html_14f7c1d2bacc45c595921ccc23fcaef7" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_49e2a2aa5a0b4f60bb1a0b4f580a6622.setContent(html_14f7c1d2bacc45c595921ccc23fcaef7);
+        
+
+        circle_ecb7ff5de1134bffae1848a5225abce5.bindPopup(popup_49e2a2aa5a0b4f60bb1a0b4f580a6622)
+        ;
+
+        
+    
+    
+            var circle_e321eb081ae643b499140cb96d400a98 = L.circle(
+                [-2.1967272419999997, 121.3769531],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_2e08cd36f60449c7b75cf60a8ab3248e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_31e8c09c084d44e290dda6dab6cc96b4 = $(`<div id="html_31e8c09c084d44e290dda6dab6cc96b4" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_2e08cd36f60449c7b75cf60a8ab3248e.setContent(html_31e8c09c084d44e290dda6dab6cc96b4);
+        
+
+        circle_e321eb081ae643b499140cb96d400a98.bindPopup(popup_2e08cd36f60449c7b75cf60a8ab3248e)
+        ;
+
+        
+    
+    
+            var circle_40a72206218d49fea1294775fff7a972 = L.circle(
+                [-2.1967272419999997, 121.5527344],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_ab101b354ec84a5bb3c13202c98ea441 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_30489d3bdadc436196249ad275b0bd72 = $(`<div id="html_30489d3bdadc436196249ad275b0bd72" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_ab101b354ec84a5bb3c13202c98ea441.setContent(html_30489d3bdadc436196249ad275b0bd72);
+        
+
+        circle_40a72206218d49fea1294775fff7a972.bindPopup(popup_ab101b354ec84a5bb3c13202c98ea441)
+        ;
+
+        
+    
+    
+            var circle_d496654bd1754eeb8fa62c8ab287ee52 = L.circle(
+                [-2.8113711930000003, 121.11328119999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_eda5ab8cc181422a802e7b605a71ddaf = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1c3d0363dd6a487c96cf5d67e3a9e5a7 = $(`<div id="html_1c3d0363dd6a487c96cf5d67e3a9e5a7" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_eda5ab8cc181422a802e7b605a71ddaf.setContent(html_1c3d0363dd6a487c96cf5d67e3a9e5a7);
+        
+
+        circle_d496654bd1754eeb8fa62c8ab287ee52.bindPopup(popup_eda5ab8cc181422a802e7b605a71ddaf)
+        ;
+
+        
+    
+    
+            var circle_39fc0dc2f3bb4d35882ce51f3dbf09bc = L.circle(
+                [-2.7235830830000003, 121.2890625],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_c6729d3ec4fd4ebea9754df15ac9d762 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_742df14df749477b89259d1d7a94b2d1 = $(`<div id="html_742df14df749477b89259d1d7a94b2d1" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_c6729d3ec4fd4ebea9754df15ac9d762.setContent(html_742df14df749477b89259d1d7a94b2d1);
+        
+
+        circle_39fc0dc2f3bb4d35882ce51f3dbf09bc.bindPopup(popup_c6729d3ec4fd4ebea9754df15ac9d762)
+        ;
+
+        
+    
+    
+            var circle_53b59dd88fc043448c4e2df5e507ef50 = L.circle(
+                [-2.986927393, 121.5527344],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_2190a33d28ad408ebc48897611bab1f0 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_477e58ffa06940ff92868faeb87c0882 = $(`<div id="html_477e58ffa06940ff92868faeb87c0882" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_2190a33d28ad408ebc48897611bab1f0.setContent(html_477e58ffa06940ff92868faeb87c0882);
+        
+
+        circle_53b59dd88fc043448c4e2df5e507ef50.bindPopup(popup_2190a33d28ad408ebc48897611bab1f0)
+        ;
+
+        
+    
+    
+            var circle_5d1da79cc63147a4a7540f3ad12a873e = L.circle(
+                [-2.986927393, 121.81640619999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_b0f7d0b84c4a472ca2f5a9814846ec98 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8bd9a2d0817e42f99be766edd27a8927 = $(`<div id="html_8bd9a2d0817e42f99be766edd27a8927" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_b0f7d0b84c4a472ca2f5a9814846ec98.setContent(html_8bd9a2d0817e42f99be766edd27a8927);
+        
+
+        circle_5d1da79cc63147a4a7540f3ad12a873e.bindPopup(popup_b0f7d0b84c4a472ca2f5a9814846ec98)
+        ;
+
+        
+    
+    
+            var circle_6accf20605974b4eb910e24b7800b95a = L.circle(
+                [-2.8113711930000003, 121.2011719],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_cc78d71cdf5645968e9e09a5e8ab9f40 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4d213fcaea864179961cdc63907ad9c9 = $(`<div id="html_4d213fcaea864179961cdc63907ad9c9" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_cc78d71cdf5645968e9e09a5e8ab9f40.setContent(html_4d213fcaea864179961cdc63907ad9c9);
+        
+
+        circle_6accf20605974b4eb910e24b7800b95a.bindPopup(popup_cc78d71cdf5645968e9e09a5e8ab9f40)
+        ;
+
+        
+    
+    
+            var circle_e486f26275e447c382a3989f4bd177e0 = L.circle(
+                [-2.899152698, 122.16796869999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_3875b9a0a13d4166aa97b7529998ede0 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_66262ce8265e458da4025e6532fa8e90 = $(`<div id="html_66262ce8265e458da4025e6532fa8e90" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_3875b9a0a13d4166aa97b7529998ede0.setContent(html_66262ce8265e458da4025e6532fa8e90);
+        
+
+        circle_e486f26275e447c382a3989f4bd177e0.bindPopup(popup_3875b9a0a13d4166aa97b7529998ede0)
+        ;
+
+        
+    
+    
+            var circle_886fdefe91fb4a449a52a68e9847e42d = L.circle(
+                [-2.899152698, 122.0800781],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_c3a80b487f7542f792e57579e6954ffd = L.popup({"maxWidth": "100%"});
+
+        
+            var html_37eae1df295d41e5bae1beda2bea6eb5 = $(`<div id="html_37eae1df295d41e5bae1beda2bea6eb5" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_c3a80b487f7542f792e57579e6954ffd.setContent(html_37eae1df295d41e5bae1beda2bea6eb5);
+        
+
+        circle_886fdefe91fb4a449a52a68e9847e42d.bindPopup(popup_c3a80b487f7542f792e57579e6954ffd)
+        ;
+
+        
+    
+    
+            var circle_8cd7ff3fdc56477195eeaa3e42e5623e = L.circle(
+                [-6.751896465, 107.6220703],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_e37ac0a172a04fb7b19d348fb0e746ea = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a9a19553e94f437b9b51599c446f1f00 = $(`<div id="html_a9a19553e94f437b9b51599c446f1f00" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_e37ac0a172a04fb7b19d348fb0e746ea.setContent(html_a9a19553e94f437b9b51599c446f1f00);
+        
+
+        circle_8cd7ff3fdc56477195eeaa3e42e5623e.bindPopup(popup_e37ac0a172a04fb7b19d348fb0e746ea)
+        ;
+
+        
+    
+    
+            var circle_1577f7ec4cfc4f46b43fe85aee27fe61 = L.circle(
+                [-0.69124716, 123.0029297],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_539318157f7b41d2bf2fb0148447949c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1b2bae5fb42b48c99ee02d38657a314c = $(`<div id="html_1b2bae5fb42b48c99ee02d38657a314c" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_539318157f7b41d2bf2fb0148447949c.setContent(html_1b2bae5fb42b48c99ee02d38657a314c);
+        
+
+        circle_1577f7ec4cfc4f46b43fe85aee27fe61.bindPopup(popup_539318157f7b41d2bf2fb0148447949c)
+        ;
+
+        
+    
+    
+            var circle_edf8c76216ce4acda351923139baa52b = L.circle(
+                [0.776561675, 128.2763672],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_a75ab1483c8847098f2483ab0637659d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6432a159c60e46b4adb2a89f8bacf4ee = $(`<div id="html_6432a159c60e46b4adb2a89f8bacf4ee" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_a75ab1483c8847098f2483ab0637659d.setContent(html_6432a159c60e46b4adb2a89f8bacf4ee);
+        
+
+        circle_edf8c76216ce4acda351923139baa52b.bindPopup(popup_a75ab1483c8847098f2483ab0637659d)
+        ;
+
+        
+    
+    
+            var circle_f116f8bcc5d445159d701f5178d4f6d6 = L.circle(
+                [0.776561675, 128.3203125],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_701e8fa24e454a9abc666492727f484d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f277f9ed6edd46318ac3e3a06d1041aa = $(`<div id="html_f277f9ed6edd46318ac3e3a06d1041aa" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_701e8fa24e454a9abc666492727f484d.setContent(html_f277f9ed6edd46318ac3e3a06d1041aa);
+        
+
+        circle_f116f8bcc5d445159d701f5178d4f6d6.bindPopup(popup_701e8fa24e454a9abc666492727f484d)
+        ;
+
+        
+    
+    
+            var circle_82ebfc53e429415e8fb3d3eaf3c9ec58 = L.circle(
+                [0.735586803, 128.3203125],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_0fb7169ebc444b98a5ff8d59d12eb05f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1bf9b7161bdf406dbde2631314a85155 = $(`<div id="html_1bf9b7161bdf406dbde2631314a85155" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_0fb7169ebc444b98a5ff8d59d12eb05f.setContent(html_1bf9b7161bdf406dbde2631314a85155);
+        
+
+        circle_82ebfc53e429415e8fb3d3eaf3c9ec58.bindPopup(popup_0fb7169ebc444b98a5ff8d59d12eb05f)
+        ;
+
+        
+    
+    
+            var circle_151da55ef2354a459f7fa0a8944be9cb = L.circle(
+                [0.735586803, 128.18847659999997],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_ee324fb833a94b64bf10e0e0dbd7c241 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_498cf4cb6fc74d5e948ce2b99586aeb2 = $(`<div id="html_498cf4cb6fc74d5e948ce2b99586aeb2" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_ee324fb833a94b64bf10e0e0dbd7c241.setContent(html_498cf4cb6fc74d5e948ce2b99586aeb2);
+        
+
+        circle_151da55ef2354a459f7fa0a8944be9cb.bindPopup(popup_ee324fb833a94b64bf10e0e0dbd7c241)
+        ;
+
+        
+    
+    
+            var circle_d2db43aaf2c84ff8809934d60a42d530 = L.circle(
+                [0.735586803, 128.18847659999997],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_6f08251cf3b3495aa1d1c6c22587cc7c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f91d469b0cd64fee90560c0b6f16f2c5 = $(`<div id="html_f91d469b0cd64fee90560c0b6f16f2c5" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_6f08251cf3b3495aa1d1c6c22587cc7c.setContent(html_f91d469b0cd64fee90560c0b6f16f2c5);
+        
+
+        circle_d2db43aaf2c84ff8809934d60a42d530.bindPopup(popup_6f08251cf3b3495aa1d1c6c22587cc7c)
+        ;
+
+        
+    
+    
+            var circle_4d365d90b2d640468a12cb1c6be625c6 = L.circle(
+                [0.735586803, 128.18847659999997],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_c7c836d7222d4f579038268614361963 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d7c79793ab12485cb625ee5b6ce93a5a = $(`<div id="html_d7c79793ab12485cb625ee5b6ce93a5a" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_c7c836d7222d4f579038268614361963.setContent(html_d7c79793ab12485cb625ee5b6ce93a5a);
+        
+
+        circle_4d365d90b2d640468a12cb1c6be625c6.bindPopup(popup_c7c836d7222d4f579038268614361963)
+        ;
+
+        
+    
+    
+            var circle_5be17925567143a88351f6c70df1f2ad = L.circle(
+                [0.776561675, 128.2324219],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_bc4114dad823433ab739fe03a33e001e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8feaba1f68ab444e8caf8b184d9698ad = $(`<div id="html_8feaba1f68ab444e8caf8b184d9698ad" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_bc4114dad823433ab739fe03a33e001e.setContent(html_8feaba1f68ab444e8caf8b184d9698ad);
+        
+
+        circle_5be17925567143a88351f6c70df1f2ad.bindPopup(popup_bc4114dad823433ab739fe03a33e001e)
+        ;
+
+        
+    
+    
+            var circle_da7c0209894942fdaaa60ebe68b54a61 = L.circle(
+                [0.8175478970000001, 128.18847659999997],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_725c613fd057488982aa630c2d5e3886 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d4d25914e4f14196ab8710f72d3f45a2 = $(`<div id="html_d4d25914e4f14196ab8710f72d3f45a2" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_725c613fd057488982aa630c2d5e3886.setContent(html_d4d25914e4f14196ab8710f72d3f45a2);
+        
+
+        circle_da7c0209894942fdaaa60ebe68b54a61.bindPopup(popup_725c613fd057488982aa630c2d5e3886)
+        ;
+
+        
+    
+    
+            var circle_5cc1f45e43a84641b68a6f063e5c57f2 = L.circle(
+                [0.940574479, 128.18847659999997],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_5a20f80bde894de3ba716abbab9df828 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f832f2e7c5934e6181802a197b16f2d7 = $(`<div id="html_f832f2e7c5934e6181802a197b16f2d7" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_5a20f80bde894de3ba716abbab9df828.setContent(html_f832f2e7c5934e6181802a197b16f2d7);
+        
+
+        circle_5cc1f45e43a84641b68a6f063e5c57f2.bindPopup(popup_5a20f80bde894de3ba716abbab9df828)
+        ;
+
+        
+    
+    
+            var circle_9756313c45a94d37b191a1bda5ec863a = L.circle(
+                [0.694623298, 128.18847659999997],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_827df105e9664afbba9ed6f9815d19b7 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e4fbfd60b5ef4a6492735b0ea6b0bcd4 = $(`<div id="html_e4fbfd60b5ef4a6492735b0ea6b0bcd4" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_827df105e9664afbba9ed6f9815d19b7.setContent(html_e4fbfd60b5ef4a6492735b0ea6b0bcd4);
+        
+
+        circle_9756313c45a94d37b191a1bda5ec863a.bindPopup(popup_827df105e9664afbba9ed6f9815d19b7)
+        ;
+
+        
+    
+    
+            var circle_f1a98919eba64825b391102611032441 = L.circle(
+                [-0.081500068, 129.375],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_28fcbfe428da44cfb8e962cd86167fbb = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9a897c606f6840278e8f2421d9c17b66 = $(`<div id="html_9a897c606f6840278e8f2421d9c17b66" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_28fcbfe428da44cfb8e962cd86167fbb.setContent(html_9a897c606f6840278e8f2421d9c17b66);
+        
+
+        circle_f1a98919eba64825b391102611032441.bindPopup(popup_28fcbfe428da44cfb8e962cd86167fbb)
+        ;
+
+        
+    
+    
+            var circle_f3ba5c21beb5492cb58e65045d0bea44 = L.circle(
+                [-0.122232534, 130.29785159999997],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_d0dd5ddcfd3b412c9267e4e778b9385d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8032c7088fff4b518b042cb06c65e476 = $(`<div id="html_8032c7088fff4b518b042cb06c65e476" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_d0dd5ddcfd3b412c9267e4e778b9385d.setContent(html_8032c7088fff4b518b042cb06c65e476);
+        
+
+        circle_f3ba5c21beb5492cb58e65045d0bea44.bindPopup(popup_d0dd5ddcfd3b412c9267e4e778b9385d)
+        ;
+
+        
+    
+    
+            var circle_ae200c3264874a0b8d3af47a8c6a9d8d = L.circle(
+                [-0.081500068, 130.64941409999997],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_b09ed325d51b42c5906d256ef4af6f39 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_42e84f8c21b44d8cb92152d223a82330 = $(`<div id="html_42e84f8c21b44d8cb92152d223a82330" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_b09ed325d51b42c5906d256ef4af6f39.setContent(html_42e84f8c21b44d8cb92152d223a82330);
+        
+
+        circle_ae200c3264874a0b8d3af47a8c6a9d8d.bindPopup(popup_b09ed325d51b42c5906d256ef4af6f39)
+        ;
+
+        
+    
+    
+            var circle_065efb8711a5448bab3a818dac05c021 = L.circle(
+                [-0.203662247, 130.3417969],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_ce7225d2cb5b41d89486d18cf43c5d99 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0e2bea9375bb48409fb160557babd799 = $(`<div id="html_0e2bea9375bb48409fb160557babd799" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_ce7225d2cb5b41d89486d18cf43c5d99.setContent(html_0e2bea9375bb48409fb160557babd799);
+        
+
+        circle_065efb8711a5448bab3a818dac05c021.bindPopup(popup_ce7225d2cb5b41d89486d18cf43c5d99)
+        ;
+
+        
+    
+    
+            var circle_27e1edf068f14e5e8fb5af693b4a06da = L.circle(
+                [-0.040755884, 130.7373047],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_c212b13b8248429a81173c2a0d31c57c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_040f2061c8da4fba9b7611cccc395ee1 = $(`<div id="html_040f2061c8da4fba9b7611cccc395ee1" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_c212b13b8248429a81173c2a0d31c57c.setContent(html_040f2061c8da4fba9b7611cccc395ee1);
+        
+
+        circle_27e1edf068f14e5e8fb5af693b4a06da.bindPopup(popup_c212b13b8248429a81173c2a0d31c57c)
+        ;
+
+        
+    
+    
+            var circle_09d7be9c29ac41d1a6adeac62be677e2 = L.circle(
+                [-0.203662247, 131.3085937],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_6d3314998de5475c95df29d1c96f5b83 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_26375c74a63a4ea58ee8444ad913c11d = $(`<div id="html_26375c74a63a4ea58ee8444ad913c11d" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_6d3314998de5475c95df29d1c96f5b83.setContent(html_26375c74a63a4ea58ee8444ad913c11d);
+        
+
+        circle_09d7be9c29ac41d1a6adeac62be677e2.bindPopup(popup_6d3314998de5475c95df29d1c96f5b83)
+        ;
+
+        
+    
+    
+            var circle_cdd25351044e400ca479119128bde6cf = L.circle(
+                [-0.040755884, 130.1220703],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_1ddf3f97432042f4a5d3c8605b81d807 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_42c7e5a28d53421988b04be9b2085440 = $(`<div id="html_42c7e5a28d53421988b04be9b2085440" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_1ddf3f97432042f4a5d3c8605b81d807.setContent(html_42c7e5a28d53421988b04be9b2085440);
+        
+
+        circle_cdd25351044e400ca479119128bde6cf.bindPopup(popup_1ddf3f97432042f4a5d3c8605b81d807)
+        ;
+
+        
+    
+    
+            var circle_77c6f7f3c36d4fa981c99e32b1d38cb6 = L.circle(
+                [-0.325718506, 130.20996090000003],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_28c565cf22ac40a097b25e2a2a6bdb6b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4bbab4dd389b4f9a94133eb26aede2cc = $(`<div id="html_4bbab4dd389b4f9a94133eb26aede2cc" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_28c565cf22ac40a097b25e2a2a6bdb6b.setContent(html_4bbab4dd389b4f9a94133eb26aede2cc);
+        
+
+        circle_77c6f7f3c36d4fa981c99e32b1d38cb6.bindPopup(popup_28c565cf22ac40a097b25e2a2a6bdb6b)
+        ;
+
+        
+    
+    
+            var circle_eee9c80f328c4eca882d009a549714ff = L.circle(
+                [-0.285044883, 130.20996090000003],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_ff109551520442fb88a0dd82a8a64ac2 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_85f101df528640c5acdf1c8cbefc3e01 = $(`<div id="html_85f101df528640c5acdf1c8cbefc3e01" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_ff109551520442fb88a0dd82a8a64ac2.setContent(html_85f101df528640c5acdf1c8cbefc3e01);
+        
+
+        circle_eee9c80f328c4eca882d009a549714ff.bindPopup(popup_ff109551520442fb88a0dd82a8a64ac2)
+        ;
+
+        
+    
+    
+            var circle_62ee5ea63bdd4405be009ace3149a220 = L.circle(
+                [-0.081500068, 131.0449219],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_628aeec9472f405cbbc1169e300828f7 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_79aebb775eef4f3488043c44e420e717 = $(`<div id="html_79aebb775eef4f3488043c44e420e717" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_628aeec9472f405cbbc1169e300828f7.setContent(html_79aebb775eef4f3488043c44e420e717);
+        
+
+        circle_62ee5ea63bdd4405be009ace3149a220.bindPopup(popup_628aeec9472f405cbbc1169e300828f7)
+        ;
+
+        
+    
+    
+            var circle_cb7c49c940694b229efe10d0a70e4103 = L.circle(
+                [-0.40703027299999994, 129.85839840000003],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_5bf30d70d0454a29a69df65bbe8e03a3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3997e37fff8843e8884fadaabe1f8e25 = $(`<div id="html_3997e37fff8843e8884fadaabe1f8e25" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_5bf30d70d0454a29a69df65bbe8e03a3.setContent(html_3997e37fff8843e8884fadaabe1f8e25);
+        
+
+        circle_cb7c49c940694b229efe10d0a70e4103.bindPopup(popup_5bf30d70d0454a29a69df65bbe8e03a3)
+        ;
+
+        
+    
+    
+            var circle_d62d69604e7341d5851959b25872eccd = L.circle(
+                [-0.44766838299999995, 129.85839840000003],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_354554f25d944c6fa3c9570c5ba0f61f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_07f33fde2cb94f64a949457ee20befee = $(`<div id="html_07f33fde2cb94f64a949457ee20befee" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_354554f25d944c6fa3c9570c5ba0f61f.setContent(html_07f33fde2cb94f64a949457ee20befee);
+        
+
+        circle_d62d69604e7341d5851959b25872eccd.bindPopup(popup_354554f25d944c6fa3c9570c5ba0f61f)
+        ;
+
+        
+    
+    
+            var circle_8cb08814f07c4da8beaa3dc4ceb82b1d = L.circle(
+                [-0.40703027299999994, 129.9023437],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_5212c33a7c614ea1b13ace23a44366a9 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_262c22d1b44a4967a40d0ffe85917e3f = $(`<div id="html_262c22d1b44a4967a40d0ffe85917e3f" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_5212c33a7c614ea1b13ace23a44366a9.setContent(html_262c22d1b44a4967a40d0ffe85917e3f);
+        
+
+        circle_8cb08814f07c4da8beaa3dc4ceb82b1d.bindPopup(popup_5212c33a7c614ea1b13ace23a44366a9)
+        ;
+
+        
+    
+    
+            var circle_364ed3d8f3dd4805bafee23af8617f1b = L.circle(
+                [-0.40703027299999994, 129.85839840000003],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_c7a5ede1230c4ec8a79891bc4eca63bb = L.popup({"maxWidth": "100%"});
+
+        
+            var html_88416c8e8624499d8368975168306871 = $(`<div id="html_88416c8e8624499d8368975168306871" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_c7a5ede1230c4ec8a79891bc4eca63bb.setContent(html_88416c8e8624499d8368975168306871);
+        
+
+        circle_364ed3d8f3dd4805bafee23af8617f1b.bindPopup(popup_c7a5ede1230c4ec8a79891bc4eca63bb)
+        ;
+
+        
+    
+    
+            var circle_790a14fbae834ef9a56f4fba150a6bc5 = L.circle(
+                [0.653671178, 128.0566406],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_59448cd53b134a10881c107ad4d6b521 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1a866b56d4004685ba847bd77160d542 = $(`<div id="html_1a866b56d4004685ba847bd77160d542" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_59448cd53b134a10881c107ad4d6b521.setContent(html_1a866b56d4004685ba847bd77160d542);
+        
+
+        circle_790a14fbae834ef9a56f4fba150a6bc5.bindPopup(popup_59448cd53b134a10881c107ad4d6b521)
+        ;
+
+        
+    
+    
+            var circle_b84868de6b884b9fbbbc3fb0330ba42d = L.circle(
+                [-0.747049145, 123.0029297],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_76c6d0bf60a14027b93f582a7094643b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a228dc0583fb4361b9f0eba20e8e3114 = $(`<div id="html_a228dc0583fb4361b9f0eba20e8e3114" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_76c6d0bf60a14027b93f582a7094643b.setContent(html_a228dc0583fb4361b9f0eba20e8e3114);
+        
+
+        circle_b84868de6b884b9fbbbc3fb0330ba42d.bindPopup(popup_76c6d0bf60a14027b93f582a7094643b)
+        ;
+
+        
+    
+    
+            var circle_7212c2afee504e498eb33c29904d3b71 = L.circle(
+                [-2.1967272419999997, 121.3330078],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_4bdd6edd2eb6490394ab16fe0751f564 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f11ba0fd98cc4ec6a48e09513725639a = $(`<div id="html_f11ba0fd98cc4ec6a48e09513725639a" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_4bdd6edd2eb6490394ab16fe0751f564.setContent(html_f11ba0fd98cc4ec6a48e09513725639a);
+        
+
+        circle_7212c2afee504e498eb33c29904d3b71.bindPopup(popup_4bdd6edd2eb6490394ab16fe0751f564)
+        ;
+
+        
+    
+    
+            var circle_fa28acd5da114d18a049f4fe380597ad = L.circle(
+                [-2.240639609, 121.5527344],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_ab2f2e23a2374eb3880c0da16fe88c1c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d350e24cf2eb4ceaaf8d436bf0d657e3 = $(`<div id="html_d350e24cf2eb4ceaaf8d436bf0d657e3" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_ab2f2e23a2374eb3880c0da16fe88c1c.setContent(html_d350e24cf2eb4ceaaf8d436bf0d657e3);
+        
+
+        circle_fa28acd5da114d18a049f4fe380597ad.bindPopup(popup_ab2f2e23a2374eb3880c0da16fe88c1c)
+        ;
+
+        
+    
+    
+            var circle_50d3c65d0d744d998cbbd2a9076af4c3 = L.circle(
+                [-3.250208562, 115.9277344],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_573e04cfdf9b4c34813094757e3aee50 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c31d597d1bcc4c3fb086d6fd22838466 = $(`<div id="html_c31d597d1bcc4c3fb086d6fd22838466" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_573e04cfdf9b4c34813094757e3aee50.setContent(html_c31d597d1bcc4c3fb086d6fd22838466);
+        
+
+        circle_50d3c65d0d744d998cbbd2a9076af4c3.bindPopup(popup_573e04cfdf9b4c34813094757e3aee50)
+        ;
+
+        
+    
+    
+            var circle_012560dcdf9545bc9372685eed4d52fe = L.circle(
+                [-3.381823735, 116.1035156],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_c91eeb3aad224efa9e638a34e56016a7 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3baec50ce99a40f79422c84086cc8b7f = $(`<div id="html_3baec50ce99a40f79422c84086cc8b7f" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_c91eeb3aad224efa9e638a34e56016a7.setContent(html_3baec50ce99a40f79422c84086cc8b7f);
+        
+
+        circle_012560dcdf9545bc9372685eed4d52fe.bindPopup(popup_c91eeb3aad224efa9e638a34e56016a7)
+        ;
+
+        
+    
+    
+            var circle_f67248fb9f7d454d8b53dbcc43416fdd = L.circle(
+                [-3.381823735, 116.4111328],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_e9b849ef5b1a40e490c62be8852917b7 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_bf6b7ca3c43e4220a21ba2733f77e7ef = $(`<div id="html_bf6b7ca3c43e4220a21ba2733f77e7ef" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_e9b849ef5b1a40e490c62be8852917b7.setContent(html_bf6b7ca3c43e4220a21ba2733f77e7ef);
+        
+
+        circle_f67248fb9f7d454d8b53dbcc43416fdd.bindPopup(popup_e9b849ef5b1a40e490c62be8852917b7)
+        ;
+
+        
+    
+    
+            var circle_9b7e633b078b481693cc49d3b84cb18e = L.circle(
+                [-3.469557303, 116.0595703],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_86f2b9f70ad743b7868405e35f5fe1d3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_93759d9a10784c08a31cf167684d80ff = $(`<div id="html_93759d9a10784c08a31cf167684d80ff" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_86f2b9f70ad743b7868405e35f5fe1d3.setContent(html_93759d9a10784c08a31cf167684d80ff);
+        
+
+        circle_9b7e633b078b481693cc49d3b84cb18e.bindPopup(popup_86f2b9f70ad743b7868405e35f5fe1d3)
+        ;
+
+        
+    
+    
+            var circle_229a2c680b3b4fefb4816d410247ece7 = L.circle(
+                [-3.337953961, 115.48828119999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_8681a07efdba455ca2d8f09f9ed2c7bb = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e3a9b8b8d88f4212902a24defe53f8a5 = $(`<div id="html_e3a9b8b8d88f4212902a24defe53f8a5" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_8681a07efdba455ca2d8f09f9ed2c7bb.setContent(html_e3a9b8b8d88f4212902a24defe53f8a5);
+        
+
+        circle_229a2c680b3b4fefb4816d410247ece7.bindPopup(popup_8681a07efdba455ca2d8f09f9ed2c7bb)
+        ;
+
+        
+    
+    
+            var circle_3f37777b1e494635a0cbbeebeb66200f = L.circle(
+                [-3.469557303, 116.19140619999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_81e4dea77dce4b6396e9665cb751f505 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_22a266d6c7eb41fabdb1560621ca8fbd = $(`<div id="html_22a266d6c7eb41fabdb1560621ca8fbd" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_81e4dea77dce4b6396e9665cb751f505.setContent(html_22a266d6c7eb41fabdb1560621ca8fbd);
+        
+
+        circle_3f37777b1e494635a0cbbeebeb66200f.bindPopup(popup_81e4dea77dce4b6396e9665cb751f505)
+        ;
+
+        
+    
+    
+            var circle_f3b686385d5b4d2f99dcde50914df64a = L.circle(
+                [-3.469557303, 116.4111328],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_4a4de3ce6f5149d2a8b97ce5c9e8ad07 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_12a9341d124d4c44a4ae1f8347c32c23 = $(`<div id="html_12a9341d124d4c44a4ae1f8347c32c23" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_4a4de3ce6f5149d2a8b97ce5c9e8ad07.setContent(html_12a9341d124d4c44a4ae1f8347c32c23);
+        
+
+        circle_f3b686385d5b4d2f99dcde50914df64a.bindPopup(popup_4a4de3ce6f5149d2a8b97ce5c9e8ad07)
+        ;
+
+        
+    
+    
+            var circle_dc05ce048f4b4e859dcc859df4f38841 = L.circle(
+                [-2.94304091, 116.23535159999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_f6383713695f41a681f71836ece1810d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_594960736b21403bbe5a36e433f9ece4 = $(`<div id="html_594960736b21403bbe5a36e433f9ece4" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_f6383713695f41a681f71836ece1810d.setContent(html_594960736b21403bbe5a36e433f9ece4);
+        
+
+        circle_dc05ce048f4b4e859dcc859df4f38841.bindPopup(popup_f6383713695f41a681f71836ece1810d)
+        ;
+
+        
+    
+    
+            var circle_021a56de74634e87870089a7ff2072a4 = L.circle(
+                [-3.294082228, 115.9277344],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_7b20be2d82aa4595b5645bfe17e46989 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8439b955c7f2432cbb90190bdd602b57 = $(`<div id="html_8439b955c7f2432cbb90190bdd602b57" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_7b20be2d82aa4595b5645bfe17e46989.setContent(html_8439b955c7f2432cbb90190bdd602b57);
+        
+
+        circle_021a56de74634e87870089a7ff2072a4.bindPopup(popup_7b20be2d82aa4595b5645bfe17e46989)
+        ;
+
+        
+    
+    
+            var circle_bd0a2c39507540b18eba8c4ee552e40c = L.circle(
+                [-3.294082228, 115.9716797],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_f90c839796e047ae997ffbdf56438f3b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8fb5cd5f5c2742dd9020fe6ae9132019 = $(`<div id="html_8fb5cd5f5c2742dd9020fe6ae9132019" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_f90c839796e047ae997ffbdf56438f3b.setContent(html_8fb5cd5f5c2742dd9020fe6ae9132019);
+        
+
+        circle_bd0a2c39507540b18eba8c4ee552e40c.bindPopup(popup_f90c839796e047ae997ffbdf56438f3b)
+        ;
+
+        
+    
+    
+            var circle_e1e68ad5028e4f1d9251341f50f473f9 = L.circle(
+                [-3.557282727, 122.34375],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_dd19def9f9b948aeb4bf95d30da42f53 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_834f0c220a8a4eafaa8823765ffe2785 = $(`<div id="html_834f0c220a8a4eafaa8823765ffe2785" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_dd19def9f9b948aeb4bf95d30da42f53.setContent(html_834f0c220a8a4eafaa8823765ffe2785);
+        
+
+        circle_e1e68ad5028e4f1d9251341f50f473f9.bindPopup(popup_dd19def9f9b948aeb4bf95d30da42f53)
+        ;
+
+        
+    
+    
+            var circle_93fb5e37d24742b199b666346649bb60 = L.circle(
+                [-3.5134210460000004, 122.2558594],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_49a723f7d8c045caaacc03f510e9b5e3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4084c51b8a76482990c4a3981ff22f70 = $(`<div id="html_4084c51b8a76482990c4a3981ff22f70" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_49a723f7d8c045caaacc03f510e9b5e3.setContent(html_4084c51b8a76482990c4a3981ff22f70);
+        
+
+        circle_93fb5e37d24742b199b666346649bb60.bindPopup(popup_49a723f7d8c045caaacc03f510e9b5e3)
+        ;
+
+        
+    
+    
+            var circle_d38411642486476a99b28a43af11e1e5 = L.circle(
+                [-3.557282727, 122.2558594],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_ec30d8aeb77d4c1f8dfd580fbcd0f015 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_2c2b58ca8f1f40f19921a987b2e37e54 = $(`<div id="html_2c2b58ca8f1f40f19921a987b2e37e54" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_ec30d8aeb77d4c1f8dfd580fbcd0f015.setContent(html_2c2b58ca8f1f40f19921a987b2e37e54);
+        
+
+        circle_d38411642486476a99b28a43af11e1e5.bindPopup(popup_ec30d8aeb77d4c1f8dfd580fbcd0f015)
+        ;
+
+        
+    
+    
+            var circle_994cd2de8ec64bfeb6487ec46776b8ae = L.circle(
+                [-3.381823735, 122.21191409999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_5f9a3d36ce5f418ea597ff33143b59e2 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b06f539c5cfa469891b6ec5380af2115 = $(`<div id="html_b06f539c5cfa469891b6ec5380af2115" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_5f9a3d36ce5f418ea597ff33143b59e2.setContent(html_b06f539c5cfa469891b6ec5380af2115);
+        
+
+        circle_994cd2de8ec64bfeb6487ec46776b8ae.bindPopup(popup_5f9a3d36ce5f418ea597ff33143b59e2)
+        ;
+
+        
+    
+    
+            var circle_59a15b7d46414e8fa84e547f4d8f2c17 = L.circle(
+                [-3.425691524, 122.3876953],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_dad0f2c3bc4d467d9d0b766f6410ba60 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d6a352b8f38e48c5a6b8d2e9e6eb6b28 = $(`<div id="html_d6a352b8f38e48c5a6b8d2e9e6eb6b28" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_dad0f2c3bc4d467d9d0b766f6410ba60.setContent(html_d6a352b8f38e48c5a6b8d2e9e6eb6b28);
+        
+
+        circle_59a15b7d46414e8fa84e547f4d8f2c17.bindPopup(popup_dad0f2c3bc4d467d9d0b766f6410ba60)
+        ;
+
+        
+    
+    
+            var circle_972cbb498ec64a1da6f7d91f43ef5ae5 = L.circle(
+                [-3.8204080830000002, 122.4316406],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_e7a8cc3fb16f4db8b2a0319a4153284a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a382921b77b1436a8573fb1b5f97069f = $(`<div id="html_a382921b77b1436a8573fb1b5f97069f" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_e7a8cc3fb16f4db8b2a0319a4153284a.setContent(html_a382921b77b1436a8573fb1b5f97069f);
+        
+
+        circle_972cbb498ec64a1da6f7d91f43ef5ae5.bindPopup(popup_e7a8cc3fb16f4db8b2a0319a4153284a)
+        ;
+
+        
+    
+    
+            var circle_f25b54ff67764c579f6b25e54e108187 = L.circle(
+                [-3.688855143, 122.2558594],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_a9a10476dff14bf2b0b720161137fa8e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6c91329bd60949d18ece1b18e35f0636 = $(`<div id="html_6c91329bd60949d18ece1b18e35f0636" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_a9a10476dff14bf2b0b720161137fa8e.setContent(html_6c91329bd60949d18ece1b18e35f0636);
+        
+
+        circle_f25b54ff67764c579f6b25e54e108187.bindPopup(popup_a9a10476dff14bf2b0b720161137fa8e)
+        ;
+
+        
+    
+    
+            var circle_dd30350c332a4ea684ce4c001d99b904 = L.circle(
+                [-3.337953961, 122.2998047],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_9c6b608282d7438389cad2a03bf27cf8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_75a420f2418043528128ce53da2b6811 = $(`<div id="html_75a420f2418043528128ce53da2b6811" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_9c6b608282d7438389cad2a03bf27cf8.setContent(html_75a420f2418043528128ce53da2b6811);
+        
+
+        circle_dd30350c332a4ea684ce4c001d99b904.bindPopup(popup_9c6b608282d7438389cad2a03bf27cf8)
+        ;
+
+        
+    
+    
+            var circle_a605e5bff6b441278e37e7abea74a197 = L.circle(
+                [-3.469557303, 122.16796869999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_e6d6971af811442692174bcb579f97d6 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ce6f33e3c75e410f8e2538ef252b0ede = $(`<div id="html_ce6f33e3c75e410f8e2538ef252b0ede" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_e6d6971af811442692174bcb579f97d6.setContent(html_ce6f33e3c75e410f8e2538ef252b0ede);
+        
+
+        circle_a605e5bff6b441278e37e7abea74a197.bindPopup(popup_e6d6971af811442692174bcb579f97d6)
+        ;
+
+        
+    
+    
+            var circle_a02630433b934782a9beef4a47c02ae4 = L.circle(
+                [-3.381823735, 122.2558594],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_8a8b5748f7594b0c87ace4a73bac5310 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_51458ca2956e4a7cbccebe15d44eb21a = $(`<div id="html_51458ca2956e4a7cbccebe15d44eb21a" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_8a8b5748f7594b0c87ace4a73bac5310.setContent(html_51458ca2956e4a7cbccebe15d44eb21a);
+        
+
+        circle_a02630433b934782a9beef4a47c02ae4.bindPopup(popup_8a8b5748f7594b0c87ace4a73bac5310)
+        ;
+
+        
+    
+    
+            var circle_5e630413556f4673b6b5f75fe7f211f0 = L.circle(
+                [-3.381823735, 122.2558594],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_ecde0779550e42ae8b98677ee0ec6f5c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_258702c5917246f5aae3c268bfcb8fcd = $(`<div id="html_258702c5917246f5aae3c268bfcb8fcd" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_ecde0779550e42ae8b98677ee0ec6f5c.setContent(html_258702c5917246f5aae3c268bfcb8fcd);
+        
+
+        circle_5e630413556f4673b6b5f75fe7f211f0.bindPopup(popup_ecde0779550e42ae8b98677ee0ec6f5c)
+        ;
+
+        
+    
+    
+            var circle_78020f39ac4740049021b6d420863f9d = L.circle(
+                [-3.864254616, 121.2890625],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_e6de120207d2436c9755e12f4dc3a693 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_859610c5d23a47598e2abdd49308c857 = $(`<div id="html_859610c5d23a47598e2abdd49308c857" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_e6de120207d2436c9755e12f4dc3a693.setContent(html_859610c5d23a47598e2abdd49308c857);
+        
+
+        circle_78020f39ac4740049021b6d420863f9d.bindPopup(popup_e6de120207d2436c9755e12f4dc3a693)
+        ;
+
+        
+    
+    
+            var circle_052e7fd3b9bc425aa64a4bcc3374ee52 = L.circle(
+                [-3.864254616, 121.3330078],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_bf27c462b1b544f2bde76e6ab170d3a4 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_2cdac9359c7f49f08b9cf031679f1885 = $(`<div id="html_2cdac9359c7f49f08b9cf031679f1885" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_bf27c462b1b544f2bde76e6ab170d3a4.setContent(html_2cdac9359c7f49f08b9cf031679f1885);
+        
+
+        circle_052e7fd3b9bc425aa64a4bcc3374ee52.bindPopup(popup_bf27c462b1b544f2bde76e6ab170d3a4)
+        ;
+
+        
+    
+    
+            var circle_9d39b6e714b24c81a1a696577661fc44 = L.circle(
+                [-3.8204080830000002, 121.2890625],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_10170def32ea4881b3999cc8437fc0db = L.popup({"maxWidth": "100%"});
+
+        
+            var html_729914c8a50c45af8e7636fdf013ad6f = $(`<div id="html_729914c8a50c45af8e7636fdf013ad6f" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_10170def32ea4881b3999cc8437fc0db.setContent(html_729914c8a50c45af8e7636fdf013ad6f);
+        
+
+        circle_9d39b6e714b24c81a1a696577661fc44.bindPopup(popup_10170def32ea4881b3999cc8437fc0db)
+        ;
+
+        
+    
+    
+            var circle_fa33475efd8c4bb2803c0bbf4e088f7b = L.circle(
+                [-3.864254616, 121.2890625],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_c95b530fdf3d4a6cb49ffb99bbc96130 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c03da7f7e79c418c94e79bcde5375eba = $(`<div id="html_c03da7f7e79c418c94e79bcde5375eba" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_c95b530fdf3d4a6cb49ffb99bbc96130.setContent(html_c03da7f7e79c418c94e79bcde5375eba);
+        
+
+        circle_fa33475efd8c4bb2803c0bbf4e088f7b.bindPopup(popup_c95b530fdf3d4a6cb49ffb99bbc96130)
+        ;
+
+        
+    
+    
+            var circle_e37221b53c074961978eebeb27b2f25b = L.circle(
+                [-3.864254616, 121.2890625],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_c1cb3f53aafe4b3196c83658b4b94775 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_92ac8567028f481282ef6eef5e0eb1ef = $(`<div id="html_92ac8567028f481282ef6eef5e0eb1ef" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_c1cb3f53aafe4b3196c83658b4b94775.setContent(html_92ac8567028f481282ef6eef5e0eb1ef);
+        
+
+        circle_e37221b53c074961978eebeb27b2f25b.bindPopup(popup_c1cb3f53aafe4b3196c83658b4b94775)
+        ;
+
+        
+    
+    
+            var circle_2822c25212e8457fabe9edc6574ba3ee = L.circle(
+                [-3.864254616, 121.2890625],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_94deed1599da4076ad0729991608b4bf = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e8e962cd30d54d7a91faa32e92233f79 = $(`<div id="html_e8e962cd30d54d7a91faa32e92233f79" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_94deed1599da4076ad0729991608b4bf.setContent(html_e8e962cd30d54d7a91faa32e92233f79);
+        
+
+        circle_2822c25212e8457fabe9edc6574ba3ee.bindPopup(popup_94deed1599da4076ad0729991608b4bf)
+        ;
+
+        
+    
+    
+            var circle_5f866c21fdac41c8ba2290b27d229248 = L.circle(
+                [-3.864254616, 121.2890625],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_0b3adbdf6e054390ac2c4076768e33c7 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_043d7347704f4b30ba5bb449bfc71273 = $(`<div id="html_043d7347704f4b30ba5bb449bfc71273" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_0b3adbdf6e054390ac2c4076768e33c7.setContent(html_043d7347704f4b30ba5bb449bfc71273);
+        
+
+        circle_5f866c21fdac41c8ba2290b27d229248.bindPopup(popup_0b3adbdf6e054390ac2c4076768e33c7)
+        ;
+
+        
+    
+    
+            var circle_ccd311fb5438487d970b5ce66b2286d4 = L.circle(
+                [-3.250208562, 122.2558594],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_ec7e14aea9c445be8b54184be73b6a9e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_71deba5b58e44a329af501a8f4ff8e15 = $(`<div id="html_71deba5b58e44a329af501a8f4ff8e15" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_ec7e14aea9c445be8b54184be73b6a9e.setContent(html_71deba5b58e44a329af501a8f4ff8e15);
+        
+
+        circle_ccd311fb5438487d970b5ce66b2286d4.bindPopup(popup_ec7e14aea9c445be8b54184be73b6a9e)
+        ;
+
+        
+    
+    
+            var circle_f46094f8dbac4a71841c4bd8cbfc743c = L.circle(
+                [-3.381823735, 122.34375],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_440bf6e4d0c44e3790ef59ab9d6e5a65 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0875e0dedd704a0fad618a3d78305dcd = $(`<div id="html_0875e0dedd704a0fad618a3d78305dcd" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_440bf6e4d0c44e3790ef59ab9d6e5a65.setContent(html_0875e0dedd704a0fad618a3d78305dcd);
+        
+
+        circle_f46094f8dbac4a71841c4bd8cbfc743c.bindPopup(popup_440bf6e4d0c44e3790ef59ab9d6e5a65)
+        ;
+
+        
+    
+    
+            var circle_8ddabf252aa748d99a2b679327da3390 = L.circle(
+                [-3.381823735, 122.34375],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_083e2c153b87493c8380379ac7cba117 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ee44cd4e979a480dabe4cb947cd18950 = $(`<div id="html_ee44cd4e979a480dabe4cb947cd18950" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_083e2c153b87493c8380379ac7cba117.setContent(html_ee44cd4e979a480dabe4cb947cd18950);
+        
+
+        circle_8ddabf252aa748d99a2b679327da3390.bindPopup(popup_083e2c153b87493c8380379ac7cba117)
+        ;
+
+        
+    
+    
+            var circle_5cf6e84453954b749290b7f85d3bae84 = L.circle(
+                [-3.381823735, 122.34375],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_8610a41ea76f4a0fbaaa565678301d31 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_956d03bf4f684e91a3842d3731a64436 = $(`<div id="html_956d03bf4f684e91a3842d3731a64436" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_8610a41ea76f4a0fbaaa565678301d31.setContent(html_956d03bf4f684e91a3842d3731a64436);
+        
+
+        circle_5cf6e84453954b749290b7f85d3bae84.bindPopup(popup_8610a41ea76f4a0fbaaa565678301d31)
+        ;
+
+        
+    
+    
+            var circle_99bbc2be308a4de8b09aaf5c202ff486 = L.circle(
+                [-3.381823735, 122.34375],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_8c0d6b53d0fe4602998eebdff03f53a3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_44451c46df9c4df49bde376137ec0c1b = $(`<div id="html_44451c46df9c4df49bde376137ec0c1b" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_8c0d6b53d0fe4602998eebdff03f53a3.setContent(html_44451c46df9c4df49bde376137ec0c1b);
+        
+
+        circle_99bbc2be308a4de8b09aaf5c202ff486.bindPopup(popup_8c0d6b53d0fe4602998eebdff03f53a3)
+        ;
+
+        
+    
+    
+            var circle_857be9e9a7224e03a39e356a056e0bdf = L.circle(
+                [-3.381823735, 122.34375],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_9337e3aa35bf4ad3ac08b80bcfafed10 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_be18c0397b534f31897d3ff670ad8927 = $(`<div id="html_be18c0397b534f31897d3ff670ad8927" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_9337e3aa35bf4ad3ac08b80bcfafed10.setContent(html_be18c0397b534f31897d3ff670ad8927);
+        
+
+        circle_857be9e9a7224e03a39e356a056e0bdf.bindPopup(popup_9337e3aa35bf4ad3ac08b80bcfafed10)
+        ;
+
+        
+    
+    
+            var circle_65da676c2c1a4301a10c1e51e14d805a = L.circle(
+                [-3.381823735, 122.34375],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_a4f1f320fe8b4a4f902fcf95a5209afa = L.popup({"maxWidth": "100%"});
+
+        
+            var html_373c19fda4e64f87a391687a0568fae3 = $(`<div id="html_373c19fda4e64f87a391687a0568fae3" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_a4f1f320fe8b4a4f902fcf95a5209afa.setContent(html_373c19fda4e64f87a391687a0568fae3);
+        
+
+        circle_65da676c2c1a4301a10c1e51e14d805a.bindPopup(popup_a4f1f320fe8b4a4f902fcf95a5209afa)
+        ;
+
+        
+    
+    
+            var circle_01a39e2f4483402bae5eb59f6615fae2 = L.circle(
+                [-3.381823735, 122.34375],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_882d5da504c54b5985c57fdb8bdd7c67 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_be6fa62511f24b83b552a72835ce898d = $(`<div id="html_be6fa62511f24b83b552a72835ce898d" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_882d5da504c54b5985c57fdb8bdd7c67.setContent(html_be6fa62511f24b83b552a72835ce898d);
+        
+
+        circle_01a39e2f4483402bae5eb59f6615fae2.bindPopup(popup_882d5da504c54b5985c57fdb8bdd7c67)
+        ;
+
+        
+    
+    
+            var circle_ebb663b9c3834202a030eeaa53f36607 = L.circle(
+                [-3.381823735, 122.34375],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_5ce4da9039064175a0ca68dd99cbd4e9 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_939850bcd17143acbb3c0ad8257b14d1 = $(`<div id="html_939850bcd17143acbb3c0ad8257b14d1" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_5ce4da9039064175a0ca68dd99cbd4e9.setContent(html_939850bcd17143acbb3c0ad8257b14d1);
+        
+
+        circle_ebb663b9c3834202a030eeaa53f36607.bindPopup(popup_5ce4da9039064175a0ca68dd99cbd4e9)
+        ;
+
+        
+    
+    
+            var circle_be9f648aacf94fab9b41d6f6dcabf235 = L.circle(
+                [-3.557282727, 122.21191409999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_35faac8d66224587b7ae3995a5d1d527 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3a28f7e6522743febd80a0614e462560 = $(`<div id="html_3a28f7e6522743febd80a0614e462560" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_35faac8d66224587b7ae3995a5d1d527.setContent(html_3a28f7e6522743febd80a0614e462560);
+        
+
+        circle_be9f648aacf94fab9b41d6f6dcabf235.bindPopup(popup_35faac8d66224587b7ae3995a5d1d527)
+        ;
+
+        
+    
+    
+            var circle_4411d36e77084d49a461ac5638e4031f = L.circle(
+                [-2.767477951, 121.2890625],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_4760942e009b4c3293b52f782dfa45c2 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a2c937e2a31b469da4b4b21c3832635f = $(`<div id="html_a2c937e2a31b469da4b4b21c3832635f" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_4760942e009b4c3293b52f782dfa45c2.setContent(html_a2c937e2a31b469da4b4b21c3832635f);
+        
+
+        circle_4411d36e77084d49a461ac5638e4031f.bindPopup(popup_4760942e009b4c3293b52f782dfa45c2)
+        ;
+
+        
+    
+    
+            var circle_464ed78b4eca4bf0b7854340d1b37f44 = L.circle(
+                [-2.899152698, 122.0361328],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_74c146c9a5d844b5a6773a5527e8fa28 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_fa501ac46246438fb6b56d04e6871aad = $(`<div id="html_fa501ac46246438fb6b56d04e6871aad" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_74c146c9a5d844b5a6773a5527e8fa28.setContent(html_fa501ac46246438fb6b56d04e6871aad);
+        
+
+        circle_464ed78b4eca4bf0b7854340d1b37f44.bindPopup(popup_74c146c9a5d844b5a6773a5527e8fa28)
+        ;
+
+        
+    
+    
+            var circle_8cc9adba197842919854e50a13867140 = L.circle(
+                [-4.214943141, 121.5966797],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_4e888b573d834633832d9e9c99e3d984 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_cfdc6b194c6e4f76abb998d7c8bf6293 = $(`<div id="html_cfdc6b194c6e4f76abb998d7c8bf6293" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_4e888b573d834633832d9e9c99e3d984.setContent(html_cfdc6b194c6e4f76abb998d7c8bf6293);
+        
+
+        circle_8cc9adba197842919854e50a13867140.bindPopup(popup_4e888b573d834633832d9e9c99e3d984)
+        ;
+
+        
+    
+    
+            var circle_eaed64f9c9ab45fbb2076c4faf14aef8 = L.circle(
+                [-4.214943141, 121.46484369999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_29d1e49109fb4a788517a7fd0fe03630 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_63bd94a9f8e841a5b9c04385b870f508 = $(`<div id="html_63bd94a9f8e841a5b9c04385b870f508" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_29d1e49109fb4a788517a7fd0fe03630.setContent(html_63bd94a9f8e841a5b9c04385b870f508);
+        
+
+        circle_eaed64f9c9ab45fbb2076c4faf14aef8.bindPopup(popup_29d1e49109fb4a788517a7fd0fe03630)
+        ;
+
+        
+    
+    
+            var circle_90a6495d11ed4390b8f53c78c24a1867 = L.circle(
+                [-4.258768357, 121.5527344],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_921b4ca63dd740a79796874a717a5dde = L.popup({"maxWidth": "100%"});
+
+        
+            var html_17c028aa02fc4d84acc070b2cebe0c49 = $(`<div id="html_17c028aa02fc4d84acc070b2cebe0c49" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_921b4ca63dd740a79796874a717a5dde.setContent(html_17c028aa02fc4d84acc070b2cebe0c49);
+        
+
+        circle_90a6495d11ed4390b8f53c78c24a1867.bindPopup(popup_921b4ca63dd740a79796874a717a5dde)
+        ;
+
+        
+    
+    
+            var circle_c107168789c54d11bec291e347ab492c = L.circle(
+                [-4.214943141, 121.640625],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_8620e9db3aaa47829a5934587d40a6d8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f3a32725c4914c3faf8d67e086d93acd = $(`<div id="html_f3a32725c4914c3faf8d67e086d93acd" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_8620e9db3aaa47829a5934587d40a6d8.setContent(html_f3a32725c4914c3faf8d67e086d93acd);
+        
+
+        circle_c107168789c54d11bec291e347ab492c.bindPopup(popup_8620e9db3aaa47829a5934587d40a6d8)
+        ;
+
+        
+    
+    
+            var circle_61af4f06c7df480f8c7c5e34031e1628 = L.circle(
+                [-4.214943141, 121.6845703],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_51980fbbb23b42e8805170d71d526d94 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_25adc5ffd8c649788cc65888464fe724 = $(`<div id="html_25adc5ffd8c649788cc65888464fe724" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_51980fbbb23b42e8805170d71d526d94.setContent(html_25adc5ffd8c649788cc65888464fe724);
+        
+
+        circle_61af4f06c7df480f8c7c5e34031e1628.bindPopup(popup_51980fbbb23b42e8805170d71d526d94)
+        ;
+
+        
+    
+    
+            var circle_33c65622eb614f2b9b6ca9b75cb22cfb = L.circle(
+                [-4.258768357, 121.7285156],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_a00595acdb044da38223b8fc7231055f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a03cab06c12140348b885b3febf55f36 = $(`<div id="html_a03cab06c12140348b885b3febf55f36" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_a00595acdb044da38223b8fc7231055f.setContent(html_a03cab06c12140348b885b3febf55f36);
+        
+
+        circle_33c65622eb614f2b9b6ca9b75cb22cfb.bindPopup(popup_a00595acdb044da38223b8fc7231055f)
+        ;
+
+        
+    
+    
+            var circle_c37a5752a8704e9da1a7ded598c5c33d = L.circle(
+                [-4.258768357, 121.6845703],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_2666c73941804961b6432f6f91512993 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4e27f74f02c4429e8feccf45650019a5 = $(`<div id="html_4e27f74f02c4429e8feccf45650019a5" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_2666c73941804961b6432f6f91512993.setContent(html_4e27f74f02c4429e8feccf45650019a5);
+        
+
+        circle_c37a5752a8704e9da1a7ded598c5c33d.bindPopup(popup_2666c73941804961b6432f6f91512993)
+        ;
+
+        
+    
+    
+            var circle_41a3f85554904f83b3557c4da91a8cec = L.circle(
+                [-4.214943141, 121.640625],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_10bee65da5a0449b81764474f8d10191 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_69d84a030dd643828b0c19ef3802df45 = $(`<div id="html_69d84a030dd643828b0c19ef3802df45" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_10bee65da5a0449b81764474f8d10191.setContent(html_69d84a030dd643828b0c19ef3802df45);
+        
+
+        circle_41a3f85554904f83b3557c4da91a8cec.bindPopup(popup_10bee65da5a0449b81764474f8d10191)
+        ;
+
+        
+    
+    
+            var circle_029526735a814d77a809858433e02e64 = L.circle(
+                [-5.441022304, 121.9482422],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_e9f3f65bafd845698fd19c2e706a49a4 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_36c1b08365b2485ca4b6cd8c98b53bb4 = $(`<div id="html_36c1b08365b2485ca4b6cd8c98b53bb4" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_e9f3f65bafd845698fd19c2e706a49a4.setContent(html_36c1b08365b2485ca4b6cd8c98b53bb4);
+        
+
+        circle_029526735a814d77a809858433e02e64.bindPopup(popup_e9f3f65bafd845698fd19c2e706a49a4)
+        ;
+
+        
+    
+    
+            var circle_1cfff3ac1c974e89b587770acbd4868b = L.circle(
+                [-5.222246513, 122.0361328],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_3cf14f78dd1e4e91a85f498137aea151 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4fdd25bba20d4d13bd2b6780039fcd0b = $(`<div id="html_4fdd25bba20d4d13bd2b6780039fcd0b" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_3cf14f78dd1e4e91a85f498137aea151.setContent(html_4fdd25bba20d4d13bd2b6780039fcd0b);
+        
+
+        circle_1cfff3ac1c974e89b587770acbd4868b.bindPopup(popup_3cf14f78dd1e4e91a85f498137aea151)
+        ;
+
+        
+    
+    
+            var circle_5c54c3d745384f75b514845a8be06664 = L.circle(
+                [-5.178482088, 105.5126953],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_7c5218fa662e4e029c76c8b41f6b32e6 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e98aa879f76e431495615eb4b9b19adb = $(`<div id="html_e98aa879f76e431495615eb4b9b19adb" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_7c5218fa662e4e029c76c8b41f6b32e6.setContent(html_e98aa879f76e431495615eb4b9b19adb);
+        
+
+        circle_5c54c3d745384f75b514845a8be06664.bindPopup(popup_7c5218fa662e4e029c76c8b41f6b32e6)
+        ;
+
+        
+    
+    
+            var circle_1bf2b82119914424acbb04c3229e1944 = L.circle(
+                [-5.266007883, 105.5126953],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_927a9864af1e49a78e39b5af196abdb4 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_057ac83adfc34444bcbea25cf0901210 = $(`<div id="html_057ac83adfc34444bcbea25cf0901210" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_927a9864af1e49a78e39b5af196abdb4.setContent(html_057ac83adfc34444bcbea25cf0901210);
+        
+
+        circle_1bf2b82119914424acbb04c3229e1944.bindPopup(popup_927a9864af1e49a78e39b5af196abdb4)
+        ;
+
+        
+    
+    
+            var circle_aee67a184d984e778444e62a7cbc893d = L.circle(
+                [5.286397793, 95.51513672],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_6dda6feab0344ed4af354c692b9ab0e5);
+        
+    
+        var popup_0e22fb3d3d414b2b8dfe7edf60d8cd6b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_fbe42daaeb7b4e47a42bea3c6bbf822a = $(`<div id="html_fbe42daaeb7b4e47a42bea3c6bbf822a" style="width: 100.0%; height: 100.0%;">Besi Laterit</div>`)[0];
+            popup_0e22fb3d3d414b2b8dfe7edf60d8cd6b.setContent(html_fbe42daaeb7b4e47a42bea3c6bbf822a);
+        
+
+        circle_aee67a184d984e778444e62a7cbc893d.bindPopup(popup_0e22fb3d3d414b2b8dfe7edf60d8cd6b)
+        ;
+
+        
+    
+    
+            map_6dda6feab0344ed4af354c692b9ab0e5.fitBounds(
+                [[-6.751896465, 95.51513672], [5.286397793, 140.625]],
+                {}
+            );
+        
+</script>

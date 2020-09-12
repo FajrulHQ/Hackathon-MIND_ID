@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_32dc9ca2a82847adaf848be1bfb55e73 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+    <script src="https://leaflet.github.io/Leaflet.heat/dist/leaflet-heat.js"></script>
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_32dc9ca2a82847adaf848be1bfb55e73" ></div>
+        
+</body>
+<script>    
+    
+            var map_32dc9ca2a82847adaf848be1bfb55e73 = L.map(
+                "map_32dc9ca2a82847adaf848be1bfb55e73",
+                {
+                    center: [-3.7907680773214283, 113.23137553928571],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_2ede36c10c53419e82e69bf67b124066 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_32dc9ca2a82847adaf848be1bfb55e73);
+        
+    
+            var heat_map_7157f70267d14dbb83c2751fa8db55e2 = L.heatLayer(
+                [[-5.790896813, 105.64453119999999], [-5.441022304, 105.29296869999999], [0.878871783, 123.57421869999999], [-2.460181181, 121.81640619999999], [-2.547987871, 106.69921869999999], [-2.460181181, 106.5234375], [-6.22793393, 107.8857422], [-7.49319647, 107.3144531], [-7.754537347, 108.10546869999999], [-7.710991655, 107.9736328], [-7.710991655, 109.20410159999999], [-8.233237111000001, 111.8408203], [-8.276727101, 113.2910156], [0.8175478970000001, 123.57421869999999], [2.259075298, 128.3203125], [2.3004579990000003, 128.3203125], [2.341851372, 128.3642578], [2.3832553969999997, 128.6279297], [2.3004579990000003, 128.671875], [-8.798225459, 121.46484369999999], [-8.841651121, 120.6738281], [-5.790896813, 105.68847659999999], [-5.441022304, 105.24902340000001], [-3.6449998010000004, 102.2607422], [-4.127285323, 102.5244141], [-4.039617827, 102.4365234], [-4.083452772, 102.4804687], [-2.547987871, 106.65527340000001]],
+                {"blur": 15, "max": 1.0, "maxZoom": 18, "minOpacity": 0.5, "radius": 20}
+            ).addTo(map_32dc9ca2a82847adaf848be1bfb55e73);
+        
+    
+            var circle_a5169aba09d045f698337d4c54d7a1a4 = L.circle(
+                [-5.790896813, 105.64453119999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_32dc9ca2a82847adaf848be1bfb55e73);
+        
+    
+        var popup_0fe42fea4a2140419a8c4be50c532432 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e2752d91a8c045d4afe068204e4a952c = $(`<div id="html_e2752d91a8c045d4afe068204e4a952c" style="width: 100.0%; height: 100.0%;">Titan Plaser</div>`)[0];
+            popup_0fe42fea4a2140419a8c4be50c532432.setContent(html_e2752d91a8c045d4afe068204e4a952c);
+        
+
+        circle_a5169aba09d045f698337d4c54d7a1a4.bindPopup(popup_0fe42fea4a2140419a8c4be50c532432)
+        ;
+
+        
+    
+    
+            var circle_e8a37519eeeb4a93af2fc6c1f8da55d4 = L.circle(
+                [-5.441022304, 105.29296869999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_32dc9ca2a82847adaf848be1bfb55e73);
+        
+    
+        var popup_15b0db3a9382456180dbd1aeb5d182d8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f310b5db9f94407cb3c0cccd3acf65a8 = $(`<div id="html_f310b5db9f94407cb3c0cccd3acf65a8" style="width: 100.0%; height: 100.0%;">Titan Plaser</div>`)[0];
+            popup_15b0db3a9382456180dbd1aeb5d182d8.setContent(html_f310b5db9f94407cb3c0cccd3acf65a8);
+        
+
+        circle_e8a37519eeeb4a93af2fc6c1f8da55d4.bindPopup(popup_15b0db3a9382456180dbd1aeb5d182d8)
+        ;
+
+        
+    
+    
+            var circle_eba00c0aa33244189d55b4811ba957a5 = L.circle(
+                [0.878871783, 123.57421869999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_32dc9ca2a82847adaf848be1bfb55e73);
+        
+    
+        var popup_4745f909663e423b8146f6f024a47b7b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_aca64a7c5e1e4b83922f4e8d045717ab = $(`<div id="html_aca64a7c5e1e4b83922f4e8d045717ab" style="width: 100.0%; height: 100.0%;">Titan Plaser</div>`)[0];
+            popup_4745f909663e423b8146f6f024a47b7b.setContent(html_aca64a7c5e1e4b83922f4e8d045717ab);
+        
+
+        circle_eba00c0aa33244189d55b4811ba957a5.bindPopup(popup_4745f909663e423b8146f6f024a47b7b)
+        ;
+
+        
+    
+    
+            var circle_03518e8abda74c0a8110412b9ee25275 = L.circle(
+                [-2.460181181, 121.81640619999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_32dc9ca2a82847adaf848be1bfb55e73);
+        
+    
+        var popup_bdbadaa290b647458acd0a4038ef668e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4eda5eaef686492cb945004506d0f1b4 = $(`<div id="html_4eda5eaef686492cb945004506d0f1b4" style="width: 100.0%; height: 100.0%;">Titan Plaser</div>`)[0];
+            popup_bdbadaa290b647458acd0a4038ef668e.setContent(html_4eda5eaef686492cb945004506d0f1b4);
+        
+
+        circle_03518e8abda74c0a8110412b9ee25275.bindPopup(popup_bdbadaa290b647458acd0a4038ef668e)
+        ;
+
+        
+    
+    
+            var circle_ff161b48fffe46a9985bfdeb785ce059 = L.circle(
+                [-2.547987871, 106.69921869999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_32dc9ca2a82847adaf848be1bfb55e73);
+        
+    
+        var popup_2ed2aea22f274f2c9281cf4f0a578b0a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f9a534a94e114896bfecb10569cdf9c6 = $(`<div id="html_f9a534a94e114896bfecb10569cdf9c6" style="width: 100.0%; height: 100.0%;">Titan Plaser</div>`)[0];
+            popup_2ed2aea22f274f2c9281cf4f0a578b0a.setContent(html_f9a534a94e114896bfecb10569cdf9c6);
+        
+
+        circle_ff161b48fffe46a9985bfdeb785ce059.bindPopup(popup_2ed2aea22f274f2c9281cf4f0a578b0a)
+        ;
+
+        
+    
+    
+            var circle_aaa38578766a435388745431a10bf9d3 = L.circle(
+                [-2.460181181, 106.5234375],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_32dc9ca2a82847adaf848be1bfb55e73);
+        
+    
+        var popup_2dbe09e7a52a43daa3a8ae2e2a51d2f6 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9130ae48d42e448887aacab99bfb5b7a = $(`<div id="html_9130ae48d42e448887aacab99bfb5b7a" style="width: 100.0%; height: 100.0%;">Titan Plaser</div>`)[0];
+            popup_2dbe09e7a52a43daa3a8ae2e2a51d2f6.setContent(html_9130ae48d42e448887aacab99bfb5b7a);
+        
+
+        circle_aaa38578766a435388745431a10bf9d3.bindPopup(popup_2dbe09e7a52a43daa3a8ae2e2a51d2f6)
+        ;
+
+        
+    
+    
+            var circle_63bab6b6529c4ed0948d231b8474f2a9 = L.circle(
+                [-6.22793393, 107.8857422],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_32dc9ca2a82847adaf848be1bfb55e73);
+        
+    
+        var popup_366e2e0b250b4befb4854a316aae7357 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d029aac5d4224a9c87aef04a12de6b3c = $(`<div id="html_d029aac5d4224a9c87aef04a12de6b3c" style="width: 100.0%; height: 100.0%;">Titan Plaser</div>`)[0];
+            popup_366e2e0b250b4befb4854a316aae7357.setContent(html_d029aac5d4224a9c87aef04a12de6b3c);
+        
+
+        circle_63bab6b6529c4ed0948d231b8474f2a9.bindPopup(popup_366e2e0b250b4befb4854a316aae7357)
+        ;
+
+        
+    
+    
+            var circle_5bdea1efd1024004a32de31ebc5a4cee = L.circle(
+                [-7.49319647, 107.3144531],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_32dc9ca2a82847adaf848be1bfb55e73);
+        
+    
+        var popup_6dcb5ada630e49b3a6cafbae4156f2e0 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6c8d192a20a347b28c000e6a430c9348 = $(`<div id="html_6c8d192a20a347b28c000e6a430c9348" style="width: 100.0%; height: 100.0%;">Titan Plaser</div>`)[0];
+            popup_6dcb5ada630e49b3a6cafbae4156f2e0.setContent(html_6c8d192a20a347b28c000e6a430c9348);
+        
+
+        circle_5bdea1efd1024004a32de31ebc5a4cee.bindPopup(popup_6dcb5ada630e49b3a6cafbae4156f2e0)
+        ;
+
+        
+    
+    
+            var circle_a129921ee2d444178cf32403a571ef6e = L.circle(
+                [-7.754537347, 108.10546869999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_32dc9ca2a82847adaf848be1bfb55e73);
+        
+    
+        var popup_d65688202e0b4e8bbad4727d555d5a89 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f4fa601c191c4c329424a7840adfa749 = $(`<div id="html_f4fa601c191c4c329424a7840adfa749" style="width: 100.0%; height: 100.0%;">Titan Plaser</div>`)[0];
+            popup_d65688202e0b4e8bbad4727d555d5a89.setContent(html_f4fa601c191c4c329424a7840adfa749);
+        
+
+        circle_a129921ee2d444178cf32403a571ef6e.bindPopup(popup_d65688202e0b4e8bbad4727d555d5a89)
+        ;
+
+        
+    
+    
+            var circle_0fe78dcea07344f4a31195fdc738ab18 = L.circle(
+                [-7.710991655, 107.9736328],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_32dc9ca2a82847adaf848be1bfb55e73);
+        
+    
+        var popup_6018d082d2bd4d3c8f5526b94269ae88 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5cc06f4944ee46d3aef6aaebcf906b9a = $(`<div id="html_5cc06f4944ee46d3aef6aaebcf906b9a" style="width: 100.0%; height: 100.0%;">Titan Plaser</div>`)[0];
+            popup_6018d082d2bd4d3c8f5526b94269ae88.setContent(html_5cc06f4944ee46d3aef6aaebcf906b9a);
+        
+
+        circle_0fe78dcea07344f4a31195fdc738ab18.bindPopup(popup_6018d082d2bd4d3c8f5526b94269ae88)
+        ;
+
+        
+    
+    
+            var circle_a7a9115eebaa413eb045bed520d382ee = L.circle(
+                [-7.710991655, 109.20410159999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_32dc9ca2a82847adaf848be1bfb55e73);
+        
+    
+        var popup_57bee683341e4df1bc056b813e289341 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_af83ed25fad14641b7ff8b4a4b5b6801 = $(`<div id="html_af83ed25fad14641b7ff8b4a4b5b6801" style="width: 100.0%; height: 100.0%;">Titan Plaser</div>`)[0];
+            popup_57bee683341e4df1bc056b813e289341.setContent(html_af83ed25fad14641b7ff8b4a4b5b6801);
+        
+
+        circle_a7a9115eebaa413eb045bed520d382ee.bindPopup(popup_57bee683341e4df1bc056b813e289341)
+        ;
+
+        
+    
+    
+            var circle_15b813adf4f64410b5c17029d79e84fc = L.circle(
+                [-8.233237111000001, 111.8408203],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_32dc9ca2a82847adaf848be1bfb55e73);
+        
+    
+        var popup_09b8f65e15c8465798eeb0439ca404e3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a885bde4021f4935bdcd031525d066a9 = $(`<div id="html_a885bde4021f4935bdcd031525d066a9" style="width: 100.0%; height: 100.0%;">Titan Plaser</div>`)[0];
+            popup_09b8f65e15c8465798eeb0439ca404e3.setContent(html_a885bde4021f4935bdcd031525d066a9);
+        
+
+        circle_15b813adf4f64410b5c17029d79e84fc.bindPopup(popup_09b8f65e15c8465798eeb0439ca404e3)
+        ;
+
+        
+    
+    
+            var circle_258523cf538b4406a19cc223da3e3d6c = L.circle(
+                [-8.276727101, 113.2910156],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_32dc9ca2a82847adaf848be1bfb55e73);
+        
+    
+        var popup_22121ba20cec47ee9735a668db123da9 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_cf77dfce2cd14f7a9797ee1427c555d0 = $(`<div id="html_cf77dfce2cd14f7a9797ee1427c555d0" style="width: 100.0%; height: 100.0%;">Titan Plaser</div>`)[0];
+            popup_22121ba20cec47ee9735a668db123da9.setContent(html_cf77dfce2cd14f7a9797ee1427c555d0);
+        
+
+        circle_258523cf538b4406a19cc223da3e3d6c.bindPopup(popup_22121ba20cec47ee9735a668db123da9)
+        ;
+
+        
+    
+    
+            var circle_2af4a448d584487191ba06c360d0dddf = L.circle(
+                [0.8175478970000001, 123.57421869999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_32dc9ca2a82847adaf848be1bfb55e73);
+        
+    
+        var popup_51554cb66dbe43708b39927177012470 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_20a0a704f80147d7927893a94c23163c = $(`<div id="html_20a0a704f80147d7927893a94c23163c" style="width: 100.0%; height: 100.0%;">Titan Plaser</div>`)[0];
+            popup_51554cb66dbe43708b39927177012470.setContent(html_20a0a704f80147d7927893a94c23163c);
+        
+
+        circle_2af4a448d584487191ba06c360d0dddf.bindPopup(popup_51554cb66dbe43708b39927177012470)
+        ;
+
+        
+    
+    
+            var circle_5bfc44dfa6fc4d1882a0bab73cb2aab9 = L.circle(
+                [2.259075298, 128.3203125],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_32dc9ca2a82847adaf848be1bfb55e73);
+        
+    
+        var popup_3aa081b3683349e38078ccb62c1ee814 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_2bbd036270ca416090395e8fb15ab731 = $(`<div id="html_2bbd036270ca416090395e8fb15ab731" style="width: 100.0%; height: 100.0%;">Titan Plaser</div>`)[0];
+            popup_3aa081b3683349e38078ccb62c1ee814.setContent(html_2bbd036270ca416090395e8fb15ab731);
+        
+
+        circle_5bfc44dfa6fc4d1882a0bab73cb2aab9.bindPopup(popup_3aa081b3683349e38078ccb62c1ee814)
+        ;
+
+        
+    
+    
+            var circle_70e161219c07435da284ea6abce35620 = L.circle(
+                [2.3004579990000003, 128.3203125],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_32dc9ca2a82847adaf848be1bfb55e73);
+        
+    
+        var popup_2facb90f18e14051a0303c48bc8bb481 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7c0bdc7b0aa4404d9dd6f57edf6407b4 = $(`<div id="html_7c0bdc7b0aa4404d9dd6f57edf6407b4" style="width: 100.0%; height: 100.0%;">Titan Plaser</div>`)[0];
+            popup_2facb90f18e14051a0303c48bc8bb481.setContent(html_7c0bdc7b0aa4404d9dd6f57edf6407b4);
+        
+
+        circle_70e161219c07435da284ea6abce35620.bindPopup(popup_2facb90f18e14051a0303c48bc8bb481)
+        ;
+
+        
+    
+    
+            var circle_328401bcfb8b4784be54055e5f9d7868 = L.circle(
+                [2.341851372, 128.3642578],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_32dc9ca2a82847adaf848be1bfb55e73);
+        
+    
+        var popup_453eaa37313642d1aea554963d7d77f0 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ae7f603f226c469cac854d2f5646b76e = $(`<div id="html_ae7f603f226c469cac854d2f5646b76e" style="width: 100.0%; height: 100.0%;">Titan Plaser</div>`)[0];
+            popup_453eaa37313642d1aea554963d7d77f0.setContent(html_ae7f603f226c469cac854d2f5646b76e);
+        
+
+        circle_328401bcfb8b4784be54055e5f9d7868.bindPopup(popup_453eaa37313642d1aea554963d7d77f0)
+        ;
+
+        
+    
+    
+            var circle_150870fd40144f86bf8152c81e920ee2 = L.circle(
+                [2.3832553969999997, 128.6279297],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_32dc9ca2a82847adaf848be1bfb55e73);
+        
+    
+        var popup_4047bb49af8a4f4096c13366354b3f26 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_71e5bfeb548e4adab14399b9cc365436 = $(`<div id="html_71e5bfeb548e4adab14399b9cc365436" style="width: 100.0%; height: 100.0%;">Titan Plaser</div>`)[0];
+            popup_4047bb49af8a4f4096c13366354b3f26.setContent(html_71e5bfeb548e4adab14399b9cc365436);
+        
+
+        circle_150870fd40144f86bf8152c81e920ee2.bindPopup(popup_4047bb49af8a4f4096c13366354b3f26)
+        ;
+
+        
+    
+    
+            var circle_eefc3537e69d4cd786b3b1a222197798 = L.circle(
+                [2.3004579990000003, 128.671875],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_32dc9ca2a82847adaf848be1bfb55e73);
+        
+    
+        var popup_526e375ba76b4e5281b30f2b2641485b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_458d836f921c4719a1f330fd2ad3ab34 = $(`<div id="html_458d836f921c4719a1f330fd2ad3ab34" style="width: 100.0%; height: 100.0%;">Titan Plaser</div>`)[0];
+            popup_526e375ba76b4e5281b30f2b2641485b.setContent(html_458d836f921c4719a1f330fd2ad3ab34);
+        
+
+        circle_eefc3537e69d4cd786b3b1a222197798.bindPopup(popup_526e375ba76b4e5281b30f2b2641485b)
+        ;
+
+        
+    
+    
+            var circle_a5c5cf613ecf487caee940261a129428 = L.circle(
+                [-8.798225459, 121.46484369999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_32dc9ca2a82847adaf848be1bfb55e73);
+        
+    
+        var popup_52f2f16d196b4fbc9be0a59188eb57c5 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b079027ec8604037a19a59e254826f63 = $(`<div id="html_b079027ec8604037a19a59e254826f63" style="width: 100.0%; height: 100.0%;">Titan Plaser</div>`)[0];
+            popup_52f2f16d196b4fbc9be0a59188eb57c5.setContent(html_b079027ec8604037a19a59e254826f63);
+        
+
+        circle_a5c5cf613ecf487caee940261a129428.bindPopup(popup_52f2f16d196b4fbc9be0a59188eb57c5)
+        ;
+
+        
+    
+    
+            var circle_1839fdda8be24d2e8437b1055d4c6d36 = L.circle(
+                [-8.841651121, 120.6738281],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_32dc9ca2a82847adaf848be1bfb55e73);
+        
+    
+        var popup_c61f5a4143d94bd69c02315dfca790ec = L.popup({"maxWidth": "100%"});
+
+        
+            var html_70558964176b495ea67c2fadcc69a7c9 = $(`<div id="html_70558964176b495ea67c2fadcc69a7c9" style="width: 100.0%; height: 100.0%;">Titan Plaser</div>`)[0];
+            popup_c61f5a4143d94bd69c02315dfca790ec.setContent(html_70558964176b495ea67c2fadcc69a7c9);
+        
+
+        circle_1839fdda8be24d2e8437b1055d4c6d36.bindPopup(popup_c61f5a4143d94bd69c02315dfca790ec)
+        ;
+
+        
+    
+    
+            var circle_bd501d76938e4f1490012323cad70150 = L.circle(
+                [-5.790896813, 105.68847659999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_32dc9ca2a82847adaf848be1bfb55e73);
+        
+    
+        var popup_f17efe092f6144b8850433e31cac93c0 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3510521412cd4431ac250d861c5a484b = $(`<div id="html_3510521412cd4431ac250d861c5a484b" style="width: 100.0%; height: 100.0%;">Titan Plaser</div>`)[0];
+            popup_f17efe092f6144b8850433e31cac93c0.setContent(html_3510521412cd4431ac250d861c5a484b);
+        
+
+        circle_bd501d76938e4f1490012323cad70150.bindPopup(popup_f17efe092f6144b8850433e31cac93c0)
+        ;
+
+        
+    
+    
+            var circle_daa079c53b644465ad6befdf7bac516a = L.circle(
+                [-5.441022304, 105.24902340000001],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_32dc9ca2a82847adaf848be1bfb55e73);
+        
+    
+        var popup_24aec6ca3dc7442f922d2365e8acf22a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0515537d58484a25ad9f9f42be7164b8 = $(`<div id="html_0515537d58484a25ad9f9f42be7164b8" style="width: 100.0%; height: 100.0%;">Titan Plaser</div>`)[0];
+            popup_24aec6ca3dc7442f922d2365e8acf22a.setContent(html_0515537d58484a25ad9f9f42be7164b8);
+        
+
+        circle_daa079c53b644465ad6befdf7bac516a.bindPopup(popup_24aec6ca3dc7442f922d2365e8acf22a)
+        ;
+
+        
+    
+    
+            var circle_98cb9edaa81e4593ac7a952c12bb397f = L.circle(
+                [-3.6449998010000004, 102.2607422],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_32dc9ca2a82847adaf848be1bfb55e73);
+        
+    
+        var popup_5ae74d88285f47749e3d7b8d0c3ac8d6 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f5735de87386405aa64076f38be1f6ef = $(`<div id="html_f5735de87386405aa64076f38be1f6ef" style="width: 100.0%; height: 100.0%;">Titan Plaser</div>`)[0];
+            popup_5ae74d88285f47749e3d7b8d0c3ac8d6.setContent(html_f5735de87386405aa64076f38be1f6ef);
+        
+
+        circle_98cb9edaa81e4593ac7a952c12bb397f.bindPopup(popup_5ae74d88285f47749e3d7b8d0c3ac8d6)
+        ;
+
+        
+    
+    
+            var circle_e335b4b5e4534004894c421a1b8a53b0 = L.circle(
+                [-4.127285323, 102.5244141],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_32dc9ca2a82847adaf848be1bfb55e73);
+        
+    
+        var popup_a691d3a319df42d497a8fe9719da4005 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_835424bfa0f1419c9f8bf7c4eacec2d5 = $(`<div id="html_835424bfa0f1419c9f8bf7c4eacec2d5" style="width: 100.0%; height: 100.0%;">Titan Plaser</div>`)[0];
+            popup_a691d3a319df42d497a8fe9719da4005.setContent(html_835424bfa0f1419c9f8bf7c4eacec2d5);
+        
+
+        circle_e335b4b5e4534004894c421a1b8a53b0.bindPopup(popup_a691d3a319df42d497a8fe9719da4005)
+        ;
+
+        
+    
+    
+            var circle_e22e549767774c9989e5320aa8c912dd = L.circle(
+                [-4.039617827, 102.4365234],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_32dc9ca2a82847adaf848be1bfb55e73);
+        
+    
+        var popup_48b47295942c47ad801b38e48dbdd725 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d60e67b5b2c640b4b314124b31ecc18d = $(`<div id="html_d60e67b5b2c640b4b314124b31ecc18d" style="width: 100.0%; height: 100.0%;">Titan Plaser</div>`)[0];
+            popup_48b47295942c47ad801b38e48dbdd725.setContent(html_d60e67b5b2c640b4b314124b31ecc18d);
+        
+
+        circle_e22e549767774c9989e5320aa8c912dd.bindPopup(popup_48b47295942c47ad801b38e48dbdd725)
+        ;
+
+        
+    
+    
+            var circle_1fa020d538894d86a32da545c72ad4ec = L.circle(
+                [-4.083452772, 102.4804687],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_32dc9ca2a82847adaf848be1bfb55e73);
+        
+    
+        var popup_b1e7c4c345e04b4d9ef95e927c2ba1e3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0376c77a29f64e249aadf2bdbf846f6d = $(`<div id="html_0376c77a29f64e249aadf2bdbf846f6d" style="width: 100.0%; height: 100.0%;">Titan Plaser</div>`)[0];
+            popup_b1e7c4c345e04b4d9ef95e927c2ba1e3.setContent(html_0376c77a29f64e249aadf2bdbf846f6d);
+        
+
+        circle_1fa020d538894d86a32da545c72ad4ec.bindPopup(popup_b1e7c4c345e04b4d9ef95e927c2ba1e3)
+        ;
+
+        
+    
+    
+            var circle_8edec68f72e64aae9c91c8decb638c10 = L.circle(
+                [-2.547987871, 106.65527340000001],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_32dc9ca2a82847adaf848be1bfb55e73);
+        
+    
+        var popup_d0c55da20e764128924d33a3033627c7 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f0409f4a79c54b83a3981e0a0493f58e = $(`<div id="html_f0409f4a79c54b83a3981e0a0493f58e" style="width: 100.0%; height: 100.0%;">Titan Plaser</div>`)[0];
+            popup_d0c55da20e764128924d33a3033627c7.setContent(html_f0409f4a79c54b83a3981e0a0493f58e);
+        
+
+        circle_8edec68f72e64aae9c91c8decb638c10.bindPopup(popup_d0c55da20e764128924d33a3033627c7)
+        ;
+
+        
+    
+    
+            map_32dc9ca2a82847adaf848be1bfb55e73.fitBounds(
+                [[-8.841651121, 102.2607422], [2.3832553969999997, 128.671875]],
+                {}
+            );
+        
+</script>

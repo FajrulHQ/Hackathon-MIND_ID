@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_af3bfa05df9742d1bb71301e44162794 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+    <script src="https://leaflet.github.io/Leaflet.heat/dist/leaflet-heat.js"></script>
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_af3bfa05df9742d1bb71301e44162794" ></div>
+        
+</body>
+<script>    
+    
+            var map_af3bfa05df9742d1bb71301e44162794 = L.map(
+                "map_af3bfa05df9742d1bb71301e44162794",
+                {
+                    center: [0.6665916109230768, 111.28051758230768],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_383f2791428f42878a6d04f8f8ce2c69 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_af3bfa05df9742d1bb71301e44162794);
+        
+    
+            var heat_map_6dfbfd26f3274ff989cd8061105e393c = L.heatLayer(
+                [[0.351560294, 112.8515625], [0.439448816, 112.7636719], [0.351560294, 112.2363281], [0.351560294, 112.32421869999999], [0.326466197, 112.8076172], [0.40819853100000003, 112.71972659999999], [0.285617336, 112.28027340000001], [0.326466197, 112.36816409999999], [0.351560294, 112.8076172], [0.439448816, 112.71972659999999], [0.30761571, 112.28027340000001], [0.351560294, 112.36816409999999], [4.374627868999999, 96.11938477]],
+                {"blur": 15, "max": 1.0, "maxZoom": 18, "minOpacity": 0.5, "radius": 20}
+            ).addTo(map_af3bfa05df9742d1bb71301e44162794);
+        
+    
+            var circle_65a290d73d42461cb92493e8e23fc3a7 = L.circle(
+                [0.351560294, 112.8515625],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_af3bfa05df9742d1bb71301e44162794);
+        
+    
+        var popup_c9c7e0a89c374cbca3ff9a427481963f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d4c657f4d1244d9e93c0b687aa3eb5a8 = $(`<div id="html_d4c657f4d1244d9e93c0b687aa3eb5a8" style="width: 100.0%; height: 100.0%;">Air Raksa</div>`)[0];
+            popup_c9c7e0a89c374cbca3ff9a427481963f.setContent(html_d4c657f4d1244d9e93c0b687aa3eb5a8);
+        
+
+        circle_65a290d73d42461cb92493e8e23fc3a7.bindPopup(popup_c9c7e0a89c374cbca3ff9a427481963f)
+        ;
+
+        
+    
+    
+            var circle_36188646b1ba4d0c9581e6ad7bf6e58a = L.circle(
+                [0.439448816, 112.7636719],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_af3bfa05df9742d1bb71301e44162794);
+        
+    
+        var popup_9943f72baaa645adb67a529032981b26 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8f2a142b02064b528ac421358db6e087 = $(`<div id="html_8f2a142b02064b528ac421358db6e087" style="width: 100.0%; height: 100.0%;">Air Raksa</div>`)[0];
+            popup_9943f72baaa645adb67a529032981b26.setContent(html_8f2a142b02064b528ac421358db6e087);
+        
+
+        circle_36188646b1ba4d0c9581e6ad7bf6e58a.bindPopup(popup_9943f72baaa645adb67a529032981b26)
+        ;
+
+        
+    
+    
+            var circle_fcb2553e8277419189e6a798c34afb5b = L.circle(
+                [0.351560294, 112.2363281],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_af3bfa05df9742d1bb71301e44162794);
+        
+    
+        var popup_0f90afeb6e18482f9982a4db57f5015d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c696c116cb6940769a1635fb5136224f = $(`<div id="html_c696c116cb6940769a1635fb5136224f" style="width: 100.0%; height: 100.0%;">Air Raksa</div>`)[0];
+            popup_0f90afeb6e18482f9982a4db57f5015d.setContent(html_c696c116cb6940769a1635fb5136224f);
+        
+
+        circle_fcb2553e8277419189e6a798c34afb5b.bindPopup(popup_0f90afeb6e18482f9982a4db57f5015d)
+        ;
+
+        
+    
+    
+            var circle_e2e25772843a4901aa153d4bfb9eaf67 = L.circle(
+                [0.351560294, 112.32421869999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_af3bfa05df9742d1bb71301e44162794);
+        
+    
+        var popup_1c4b4a2d2ab444eb8366081971685f94 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_323de6e506de40558d0a19f5007bba93 = $(`<div id="html_323de6e506de40558d0a19f5007bba93" style="width: 100.0%; height: 100.0%;">Air Raksa</div>`)[0];
+            popup_1c4b4a2d2ab444eb8366081971685f94.setContent(html_323de6e506de40558d0a19f5007bba93);
+        
+
+        circle_e2e25772843a4901aa153d4bfb9eaf67.bindPopup(popup_1c4b4a2d2ab444eb8366081971685f94)
+        ;
+
+        
+    
+    
+            var circle_01b881ade3a84425a765a4f263b3832f = L.circle(
+                [0.326466197, 112.8076172],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_af3bfa05df9742d1bb71301e44162794);
+        
+    
+        var popup_34a664b192f64bb39f92399c8a6f5c09 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_48f8f5e289eb48c1a3647347a928d94f = $(`<div id="html_48f8f5e289eb48c1a3647347a928d94f" style="width: 100.0%; height: 100.0%;">Air Raksa</div>`)[0];
+            popup_34a664b192f64bb39f92399c8a6f5c09.setContent(html_48f8f5e289eb48c1a3647347a928d94f);
+        
+
+        circle_01b881ade3a84425a765a4f263b3832f.bindPopup(popup_34a664b192f64bb39f92399c8a6f5c09)
+        ;
+
+        
+    
+    
+            var circle_74add6d07c904a74adb535c701069802 = L.circle(
+                [0.40819853100000003, 112.71972659999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_af3bfa05df9742d1bb71301e44162794);
+        
+    
+        var popup_29482748109a4ed990061e35c412724a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_289e8a32296840969f29712808ba5049 = $(`<div id="html_289e8a32296840969f29712808ba5049" style="width: 100.0%; height: 100.0%;">Air Raksa</div>`)[0];
+            popup_29482748109a4ed990061e35c412724a.setContent(html_289e8a32296840969f29712808ba5049);
+        
+
+        circle_74add6d07c904a74adb535c701069802.bindPopup(popup_29482748109a4ed990061e35c412724a)
+        ;
+
+        
+    
+    
+            var circle_15d03711e9fb4b6a93d78764296e9e80 = L.circle(
+                [0.285617336, 112.28027340000001],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_af3bfa05df9742d1bb71301e44162794);
+        
+    
+        var popup_e683004b9a914dadb751c5f99bb4bc68 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_676ab3c8a3df4a5bbdba1abb054b4bb7 = $(`<div id="html_676ab3c8a3df4a5bbdba1abb054b4bb7" style="width: 100.0%; height: 100.0%;">Air Raksa</div>`)[0];
+            popup_e683004b9a914dadb751c5f99bb4bc68.setContent(html_676ab3c8a3df4a5bbdba1abb054b4bb7);
+        
+
+        circle_15d03711e9fb4b6a93d78764296e9e80.bindPopup(popup_e683004b9a914dadb751c5f99bb4bc68)
+        ;
+
+        
+    
+    
+            var circle_01898e8851a34488bfa3904b10de0a29 = L.circle(
+                [0.326466197, 112.36816409999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_af3bfa05df9742d1bb71301e44162794);
+        
+    
+        var popup_88d219bd31ae49a287dc21ae4e65a272 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0629525ef3ec45eca34f7dd2cb814cba = $(`<div id="html_0629525ef3ec45eca34f7dd2cb814cba" style="width: 100.0%; height: 100.0%;">Air Raksa</div>`)[0];
+            popup_88d219bd31ae49a287dc21ae4e65a272.setContent(html_0629525ef3ec45eca34f7dd2cb814cba);
+        
+
+        circle_01898e8851a34488bfa3904b10de0a29.bindPopup(popup_88d219bd31ae49a287dc21ae4e65a272)
+        ;
+
+        
+    
+    
+            var circle_2248daa4f0494b889514652f05550350 = L.circle(
+                [0.351560294, 112.8076172],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_af3bfa05df9742d1bb71301e44162794);
+        
+    
+        var popup_36f0efa91aa74cf1955ada31c31a8aa9 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a1ceae3e27b045a0bbafd1e0ce1cc980 = $(`<div id="html_a1ceae3e27b045a0bbafd1e0ce1cc980" style="width: 100.0%; height: 100.0%;">Air Raksa</div>`)[0];
+            popup_36f0efa91aa74cf1955ada31c31a8aa9.setContent(html_a1ceae3e27b045a0bbafd1e0ce1cc980);
+        
+
+        circle_2248daa4f0494b889514652f05550350.bindPopup(popup_36f0efa91aa74cf1955ada31c31a8aa9)
+        ;
+
+        
+    
+    
+            var circle_3a07e2eb540d4bfaa57a9f679da99d64 = L.circle(
+                [0.439448816, 112.71972659999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_af3bfa05df9742d1bb71301e44162794);
+        
+    
+        var popup_36be91be24fe4498ae145fdf1fec1591 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_192b92c72260415095f825aaa4e72521 = $(`<div id="html_192b92c72260415095f825aaa4e72521" style="width: 100.0%; height: 100.0%;">Air Raksa</div>`)[0];
+            popup_36be91be24fe4498ae145fdf1fec1591.setContent(html_192b92c72260415095f825aaa4e72521);
+        
+
+        circle_3a07e2eb540d4bfaa57a9f679da99d64.bindPopup(popup_36be91be24fe4498ae145fdf1fec1591)
+        ;
+
+        
+    
+    
+            var circle_0c61194a2bfe4bd0bf178edcb515b073 = L.circle(
+                [0.30761571, 112.28027340000001],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_af3bfa05df9742d1bb71301e44162794);
+        
+    
+        var popup_199bf7ca813c42dcb5b45bf8f7ccb00c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5ffb8a3d992d486ba1d0546af486cd07 = $(`<div id="html_5ffb8a3d992d486ba1d0546af486cd07" style="width: 100.0%; height: 100.0%;">Air Raksa</div>`)[0];
+            popup_199bf7ca813c42dcb5b45bf8f7ccb00c.setContent(html_5ffb8a3d992d486ba1d0546af486cd07);
+        
+
+        circle_0c61194a2bfe4bd0bf178edcb515b073.bindPopup(popup_199bf7ca813c42dcb5b45bf8f7ccb00c)
+        ;
+
+        
+    
+    
+            var circle_6862b4a02d8c4698be99d13478e8dbfb = L.circle(
+                [0.351560294, 112.36816409999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_af3bfa05df9742d1bb71301e44162794);
+        
+    
+        var popup_38458be19747406ebbfcec85643f221c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e3333d2f47ab498e8c9832818c80af73 = $(`<div id="html_e3333d2f47ab498e8c9832818c80af73" style="width: 100.0%; height: 100.0%;">Air Raksa</div>`)[0];
+            popup_38458be19747406ebbfcec85643f221c.setContent(html_e3333d2f47ab498e8c9832818c80af73);
+        
+
+        circle_6862b4a02d8c4698be99d13478e8dbfb.bindPopup(popup_38458be19747406ebbfcec85643f221c)
+        ;
+
+        
+    
+    
+            var circle_b11bbd4d625745f68a57e3f5eebd49c3 = L.circle(
+                [4.374627868999999, 96.11938477],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_af3bfa05df9742d1bb71301e44162794);
+        
+    
+        var popup_c7e21e2efc0c466493e2bb89a92a4efd = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f93412bce3de45fb9c7d76fb180a7db2 = $(`<div id="html_f93412bce3de45fb9c7d76fb180a7db2" style="width: 100.0%; height: 100.0%;">Air Raksa</div>`)[0];
+            popup_c7e21e2efc0c466493e2bb89a92a4efd.setContent(html_f93412bce3de45fb9c7d76fb180a7db2);
+        
+
+        circle_b11bbd4d625745f68a57e3f5eebd49c3.bindPopup(popup_c7e21e2efc0c466493e2bb89a92a4efd)
+        ;
+
+        
+    
+    
+            map_af3bfa05df9742d1bb71301e44162794.fitBounds(
+                [[0.285617336, 96.11938477], [4.374627868999999, 112.8515625]],
+                {}
+            );
+        
+</script>

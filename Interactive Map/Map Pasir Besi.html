@@ -1,0 +1,2622 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_dd39afbbc6584b7eb9914bcf13fe58a3 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+    <script src="https://leaflet.github.io/Leaflet.heat/dist/leaflet-heat.js"></script>
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_dd39afbbc6584b7eb9914bcf13fe58a3" ></div>
+        
+</body>
+<script>    
+    
+            var map_dd39afbbc6584b7eb9914bcf13fe58a3 = L.map(
+                "map_dd39afbbc6584b7eb9914bcf13fe58a3",
+                {
+                    center: [-4.222834112932835, 116.47221350664178],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_ca1a481c555d46d5a846c8c5b8a765fd = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+            var heat_map_ee14ed9237484868b35cf15ab1b828e6 = L.heatLayer(
+                [[-1.8453839890000001, 138.6914062], [-2.021065119, 139.1308594], [-2.372368709, 139.6582031], [-4.740675385, 136.9335937], [-1.757536811, 138.515625], [-1.757536811, 138.3398437], [-1.669685501, 138.2519531], [-2.28455066, 139.5703125], [-2.1967272419999997, 139.3945312], [-2.108898659, 139.21875], [-4.9158328010000005, 103.6230469], [-5.003394345, 103.7988281], [-5.090944175, 103.7988281], [-5.266007883, 103.9746094], [-5.790896813, 105.64453119999999], [-5.441022304, 105.29296869999999], [-5.703447982, 119.70703119999999], [-5.703447982, 119.7949219], [-5.703447982, 119.8828125], [-5.353521355, 119.35546869999999], [-5.266007883, 119.35546869999999], [-5.353521355, 119.35546869999999], [-5.003394345, 103.7109375], [-5.003394345, 103.7109375], [-4.9158328010000005, 103.6230469], [-4.9158328010000005, 103.5351562], [-4.828259747, 103.4472656], [1.054627942, 124.27734369999999], [0.878871783, 123.57421869999999], [0.878871783, 124.0136719], [0.966751, 124.1894531], [0.790990498, 124.62890619999999], [1.406108835, 124.62890619999999], [1.142502404, 124.3652344], [0.966751, 124.8046875], [1.230374177, 124.453125], [-2.460181181, 121.81640619999999], [-1.313666123, 138.3398437], [-1.2486192870000001, 138.2519531], [-7.49319647, 107.3144531], [-6.22793393, 107.8857422], [-6.446317748999999, 110.7861328], [-7.536764322000001, 112.67578119999999], [-6.402648406, 110.87402340000001], [-6.402648406, 110.96191409999999], [-7.754537347, 108.45703119999999], [-7.754537347, 108.10546869999999], [-7.710991655, 107.9736328], [-7.667441482999999, 108.5888672], [-7.710991655, 109.20410159999999], [-7.841615185, 109.90722659999999], [-7.9286748010000005, 110.1269531], [-7.972197714, 110.25878909999999], [-8.233237111000001, 111.8408203], [-8.276727101, 113.2910156], [-8.276727101, 111.97265619999999], [-7.798078531, 108.14941409999999], [-7.667441482999999, 109.2919922], [-7.667441482999999, 109.11621090000001], [-7.798078531, 108.3251953], [-7.798078531, 108.1933594], [-7.798078531, 108.28125], [-8.276727101, 113.1591797], [-7.798078531, 109.7753906], [-8.320212289, 113.33496090000001], [-8.320212289, 112.1923828], [-7.667441482999999, 109.16015619999999], [-7.667441482999999, 109.2919922], [-8.320212289, 112.32421869999999], [0.940574479, 124.32128909999999], [0.8175478970000001, 123.57421869999999], [0.8175478970000001, 124.0136719], [0.899554317, 124.1894531], [0.735586803, 124.62890619999999], [1.310261283, 124.58496090000001], [1.104767727, 124.4091797], [0.899554317, 124.8046875], [1.104767727, 124.453125], [0.899554317, 128.45214840000003], [1.8871142680000002, 127.96875], [1.804575221, 127.7050781], [1.928400088, 127.83691409999999], [1.969696747, 127.83691409999999], [1.8871142680000002, 127.79296869999999], [1.845839306, 127.74902340000001], [2.259075298, 128.3203125], [2.3004579990000003, 128.3203125], [2.341851372, 128.3642578], [2.3832553969999997, 128.6279297], [2.3004579990000003, 128.671875], [-8.798225459, 121.46484369999999], [-9.362352822, 119.4433594], [-9.795677583, 120.5859375], [-7.057282353, 120.71777340000001], [-8.841651121, 120.6738281], [-8.494104538, 121.9042969], [-7.14449885, 120.71777340000001], [-5.703447982, 119.75097659999999], [-5.659718555, 119.8388672], [-5.397273407999999, 119.35546869999999], [-5.222246513, 119.39941409999999], [-8.711358875, 116.1035156], [-8.667918002, 116.58691409999999], [-8.146242825, 118.125], [-8.320212289, 118.3886719], [-8.363692652000001, 118.69628909999999], [-8.276727101, 118.95996090000001], [-8.928487063, 117.90527340000001], [-8.581021216, 116.6308594], [-8.363692652000001, 117.8613281], [-3.469557303, 119.4433594], [-0.351560294, 99.93164062], [-5.047170737, 103.7988281], [-5.047170737, 103.8427734], [-5.309766172, 104.0185547], [-5.790896813, 105.68847659999999], [-5.441022304, 105.24902340000001], [-5.003394345, 103.7548828], [-4.959615025, 103.7548828], [-4.9158328010000005, 103.5791016], [-4.8720476999999995, 103.4472656], [-4.039617827, 102.3925781], [-4.083452772, 102.4365234], [-2.899152698, 101.4257812], [-3.6449998010000004, 102.2607422], [-4.127285323, 102.5244141], [-7.1881008710000005, 106.5234375], [-7.44962426, 107.09472659999999], [-7.406047717000001, 106.69921869999999], [-7.44962426, 106.8310547], [-7.406047717000001, 106.7871094], [-7.44962426, 107.1386719], [5.594013163, 95.65795898], [5.550067865, 95.77880859]],
+                {"blur": 15, "max": 1.0, "maxZoom": 18, "minOpacity": 0.5, "radius": 20}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+            var circle_d712ffeeef2c47f18cacd9a7768efad0 = L.circle(
+                [-1.8453839890000001, 138.6914062],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_ba357031228647c8b3854d30985d48bc = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c67249c3c9354f9ab464569fa3f539bf = $(`<div id="html_c67249c3c9354f9ab464569fa3f539bf" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_ba357031228647c8b3854d30985d48bc.setContent(html_c67249c3c9354f9ab464569fa3f539bf);
+        
+
+        circle_d712ffeeef2c47f18cacd9a7768efad0.bindPopup(popup_ba357031228647c8b3854d30985d48bc)
+        ;
+
+        
+    
+    
+            var circle_4aed2588851b4cccb10b905a0e86cb2b = L.circle(
+                [-2.021065119, 139.1308594],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_321ff2e123914948af2286e469044061 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_77b308648b534b96808748738320bc9e = $(`<div id="html_77b308648b534b96808748738320bc9e" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_321ff2e123914948af2286e469044061.setContent(html_77b308648b534b96808748738320bc9e);
+        
+
+        circle_4aed2588851b4cccb10b905a0e86cb2b.bindPopup(popup_321ff2e123914948af2286e469044061)
+        ;
+
+        
+    
+    
+            var circle_ddb6ad6532544c4cbb0095641cd87220 = L.circle(
+                [-2.372368709, 139.6582031],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_d6cc111568d64e2a81a76adfb4dc6c3f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5c6ebb1e68584763aeac4091a4af3af8 = $(`<div id="html_5c6ebb1e68584763aeac4091a4af3af8" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_d6cc111568d64e2a81a76adfb4dc6c3f.setContent(html_5c6ebb1e68584763aeac4091a4af3af8);
+        
+
+        circle_ddb6ad6532544c4cbb0095641cd87220.bindPopup(popup_d6cc111568d64e2a81a76adfb4dc6c3f)
+        ;
+
+        
+    
+    
+            var circle_c0f462b14f544e3699232c18978e9f61 = L.circle(
+                [-4.740675385, 136.9335937],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_61db9b025ab74369bce19d19d5edb0cc = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c2ab7f1850c24ad2b81ffc3b315b9a06 = $(`<div id="html_c2ab7f1850c24ad2b81ffc3b315b9a06" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_61db9b025ab74369bce19d19d5edb0cc.setContent(html_c2ab7f1850c24ad2b81ffc3b315b9a06);
+        
+
+        circle_c0f462b14f544e3699232c18978e9f61.bindPopup(popup_61db9b025ab74369bce19d19d5edb0cc)
+        ;
+
+        
+    
+    
+            var circle_3ac959eeafd8419b870f12247d62d867 = L.circle(
+                [-1.757536811, 138.515625],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_1effb0ecae414ef8a3a7f2700b8c5bde = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9b76523230e84cdeaebabc6554bb7620 = $(`<div id="html_9b76523230e84cdeaebabc6554bb7620" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_1effb0ecae414ef8a3a7f2700b8c5bde.setContent(html_9b76523230e84cdeaebabc6554bb7620);
+        
+
+        circle_3ac959eeafd8419b870f12247d62d867.bindPopup(popup_1effb0ecae414ef8a3a7f2700b8c5bde)
+        ;
+
+        
+    
+    
+            var circle_e02fc4a4c47d4b55a8ee4e8cc996d799 = L.circle(
+                [-1.757536811, 138.3398437],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_c0185e3be0eb41a78fca9f9b081d0374 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e89c2e9ef919405b8a0055dbec72cbf1 = $(`<div id="html_e89c2e9ef919405b8a0055dbec72cbf1" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_c0185e3be0eb41a78fca9f9b081d0374.setContent(html_e89c2e9ef919405b8a0055dbec72cbf1);
+        
+
+        circle_e02fc4a4c47d4b55a8ee4e8cc996d799.bindPopup(popup_c0185e3be0eb41a78fca9f9b081d0374)
+        ;
+
+        
+    
+    
+            var circle_f3575125a9424426accc6d3550609bd5 = L.circle(
+                [-1.669685501, 138.2519531],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_e94c51a0b4a04a3798e0db7861176a4c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_2a55ade0f499444cb820aec69ff6a067 = $(`<div id="html_2a55ade0f499444cb820aec69ff6a067" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_e94c51a0b4a04a3798e0db7861176a4c.setContent(html_2a55ade0f499444cb820aec69ff6a067);
+        
+
+        circle_f3575125a9424426accc6d3550609bd5.bindPopup(popup_e94c51a0b4a04a3798e0db7861176a4c)
+        ;
+
+        
+    
+    
+            var circle_106a23d1f17248d59e923d95d057b18c = L.circle(
+                [-2.28455066, 139.5703125],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_e3bfe518e7824ca68d313bfaedf31dbd = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b064bfb741b64aab9ec7c4c95e47c8ae = $(`<div id="html_b064bfb741b64aab9ec7c4c95e47c8ae" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_e3bfe518e7824ca68d313bfaedf31dbd.setContent(html_b064bfb741b64aab9ec7c4c95e47c8ae);
+        
+
+        circle_106a23d1f17248d59e923d95d057b18c.bindPopup(popup_e3bfe518e7824ca68d313bfaedf31dbd)
+        ;
+
+        
+    
+    
+            var circle_fbc0e2d4722e42508c3ba382f4b77884 = L.circle(
+                [-2.1967272419999997, 139.3945312],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_cc48b90296e24a3c91ccab7188893dda = L.popup({"maxWidth": "100%"});
+
+        
+            var html_bf79ecf7875e4931a3073ad733924ea3 = $(`<div id="html_bf79ecf7875e4931a3073ad733924ea3" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_cc48b90296e24a3c91ccab7188893dda.setContent(html_bf79ecf7875e4931a3073ad733924ea3);
+        
+
+        circle_fbc0e2d4722e42508c3ba382f4b77884.bindPopup(popup_cc48b90296e24a3c91ccab7188893dda)
+        ;
+
+        
+    
+    
+            var circle_f2daa32b8fe848ddb4449d855fcaa7ef = L.circle(
+                [-2.108898659, 139.21875],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_5fa31e2147ea46719bf931f795751c42 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_dc6c69eb965f4c56b3262469a1014a0b = $(`<div id="html_dc6c69eb965f4c56b3262469a1014a0b" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_5fa31e2147ea46719bf931f795751c42.setContent(html_dc6c69eb965f4c56b3262469a1014a0b);
+        
+
+        circle_f2daa32b8fe848ddb4449d855fcaa7ef.bindPopup(popup_5fa31e2147ea46719bf931f795751c42)
+        ;
+
+        
+    
+    
+            var circle_1ffe748fc019440b92b829a9468b8994 = L.circle(
+                [-4.9158328010000005, 103.6230469],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_dab0b56275204617bcb6f2748f33c0a5 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ef0aa781769a41a2abfe87ee65f8de13 = $(`<div id="html_ef0aa781769a41a2abfe87ee65f8de13" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_dab0b56275204617bcb6f2748f33c0a5.setContent(html_ef0aa781769a41a2abfe87ee65f8de13);
+        
+
+        circle_1ffe748fc019440b92b829a9468b8994.bindPopup(popup_dab0b56275204617bcb6f2748f33c0a5)
+        ;
+
+        
+    
+    
+            var circle_1e463bf9035a40f0adb0c6c6e6214b40 = L.circle(
+                [-5.003394345, 103.7988281],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_1bf2c19371f34a988b00be087bfd8d8c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7f663e4bee2b4fcba9aa6cce4dc7ba8c = $(`<div id="html_7f663e4bee2b4fcba9aa6cce4dc7ba8c" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_1bf2c19371f34a988b00be087bfd8d8c.setContent(html_7f663e4bee2b4fcba9aa6cce4dc7ba8c);
+        
+
+        circle_1e463bf9035a40f0adb0c6c6e6214b40.bindPopup(popup_1bf2c19371f34a988b00be087bfd8d8c)
+        ;
+
+        
+    
+    
+            var circle_ded386df465c44fda4a8fb0bc57204a0 = L.circle(
+                [-5.090944175, 103.7988281],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_63391b7a63124ce5932eee021d6150fd = L.popup({"maxWidth": "100%"});
+
+        
+            var html_976512a15a704266842f4d939ba8f173 = $(`<div id="html_976512a15a704266842f4d939ba8f173" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_63391b7a63124ce5932eee021d6150fd.setContent(html_976512a15a704266842f4d939ba8f173);
+        
+
+        circle_ded386df465c44fda4a8fb0bc57204a0.bindPopup(popup_63391b7a63124ce5932eee021d6150fd)
+        ;
+
+        
+    
+    
+            var circle_3beb3eb3f696442994da49fa5159bd42 = L.circle(
+                [-5.266007883, 103.9746094],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_e36a0dab274b413fb85c48c15c86d83b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7fce4fad30f04ece9f606a11811f6f08 = $(`<div id="html_7fce4fad30f04ece9f606a11811f6f08" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_e36a0dab274b413fb85c48c15c86d83b.setContent(html_7fce4fad30f04ece9f606a11811f6f08);
+        
+
+        circle_3beb3eb3f696442994da49fa5159bd42.bindPopup(popup_e36a0dab274b413fb85c48c15c86d83b)
+        ;
+
+        
+    
+    
+            var circle_eb43ede9a957498a968477695f0b4548 = L.circle(
+                [-5.790896813, 105.64453119999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_bcb5e45dc2c742dba78bbae9f25c6438 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1e2d601ebb7d4e44be3a90359ed6a7ad = $(`<div id="html_1e2d601ebb7d4e44be3a90359ed6a7ad" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_bcb5e45dc2c742dba78bbae9f25c6438.setContent(html_1e2d601ebb7d4e44be3a90359ed6a7ad);
+        
+
+        circle_eb43ede9a957498a968477695f0b4548.bindPopup(popup_bcb5e45dc2c742dba78bbae9f25c6438)
+        ;
+
+        
+    
+    
+            var circle_a6b57fd5b6734a69b8bd65411319807a = L.circle(
+                [-5.441022304, 105.29296869999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_70cc08f6ddf749b196883a92aa43c0fb = L.popup({"maxWidth": "100%"});
+
+        
+            var html_641fb2f4f42d435db7a18ecf0c6f09ad = $(`<div id="html_641fb2f4f42d435db7a18ecf0c6f09ad" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_70cc08f6ddf749b196883a92aa43c0fb.setContent(html_641fb2f4f42d435db7a18ecf0c6f09ad);
+        
+
+        circle_a6b57fd5b6734a69b8bd65411319807a.bindPopup(popup_70cc08f6ddf749b196883a92aa43c0fb)
+        ;
+
+        
+    
+    
+            var circle_fa037052faf14bcd856c34ad7ca41e0c = L.circle(
+                [-5.703447982, 119.70703119999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_7a8f4da3bb8b44da869f2ec06c09a6a1 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d7acdac5723348f0a5b862d00d97d092 = $(`<div id="html_d7acdac5723348f0a5b862d00d97d092" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_7a8f4da3bb8b44da869f2ec06c09a6a1.setContent(html_d7acdac5723348f0a5b862d00d97d092);
+        
+
+        circle_fa037052faf14bcd856c34ad7ca41e0c.bindPopup(popup_7a8f4da3bb8b44da869f2ec06c09a6a1)
+        ;
+
+        
+    
+    
+            var circle_75e8c6c6e7a644c299e6251ad473ad68 = L.circle(
+                [-5.703447982, 119.7949219],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_7c0319362f654303bd4446d47a2f523b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a4b7597de8414920a9ab4db7f66f7361 = $(`<div id="html_a4b7597de8414920a9ab4db7f66f7361" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_7c0319362f654303bd4446d47a2f523b.setContent(html_a4b7597de8414920a9ab4db7f66f7361);
+        
+
+        circle_75e8c6c6e7a644c299e6251ad473ad68.bindPopup(popup_7c0319362f654303bd4446d47a2f523b)
+        ;
+
+        
+    
+    
+            var circle_73c13432ab354a5094f182a6920181f6 = L.circle(
+                [-5.703447982, 119.8828125],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_93a9aead20fa442da5f8090f4f1dbd4c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4d955be6dd674b2185ad310bd734aef5 = $(`<div id="html_4d955be6dd674b2185ad310bd734aef5" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_93a9aead20fa442da5f8090f4f1dbd4c.setContent(html_4d955be6dd674b2185ad310bd734aef5);
+        
+
+        circle_73c13432ab354a5094f182a6920181f6.bindPopup(popup_93a9aead20fa442da5f8090f4f1dbd4c)
+        ;
+
+        
+    
+    
+            var circle_e55f1c08d48148208b663dda09501111 = L.circle(
+                [-5.353521355, 119.35546869999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_bb71b0b13e034391afc9164b6aa4b377 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_77ee89f7336d41b0bf1a5169cbc4e54a = $(`<div id="html_77ee89f7336d41b0bf1a5169cbc4e54a" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_bb71b0b13e034391afc9164b6aa4b377.setContent(html_77ee89f7336d41b0bf1a5169cbc4e54a);
+        
+
+        circle_e55f1c08d48148208b663dda09501111.bindPopup(popup_bb71b0b13e034391afc9164b6aa4b377)
+        ;
+
+        
+    
+    
+            var circle_c00eabe373d142d1886fb1e01dc7bae2 = L.circle(
+                [-5.266007883, 119.35546869999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_8dfbf335b62f4f92b6cbde18160f3dae = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3719bcab85754b04ac71e30677120b76 = $(`<div id="html_3719bcab85754b04ac71e30677120b76" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_8dfbf335b62f4f92b6cbde18160f3dae.setContent(html_3719bcab85754b04ac71e30677120b76);
+        
+
+        circle_c00eabe373d142d1886fb1e01dc7bae2.bindPopup(popup_8dfbf335b62f4f92b6cbde18160f3dae)
+        ;
+
+        
+    
+    
+            var circle_c21626690fb14da6bf8df8df453b9841 = L.circle(
+                [-5.353521355, 119.35546869999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_28efbe2426724b809a93cf1af9a1415f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d7fcd896e49e4aa19a5f009077ead4f3 = $(`<div id="html_d7fcd896e49e4aa19a5f009077ead4f3" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_28efbe2426724b809a93cf1af9a1415f.setContent(html_d7fcd896e49e4aa19a5f009077ead4f3);
+        
+
+        circle_c21626690fb14da6bf8df8df453b9841.bindPopup(popup_28efbe2426724b809a93cf1af9a1415f)
+        ;
+
+        
+    
+    
+            var circle_0a41f24a40d340d4820fd38301fa7be8 = L.circle(
+                [-5.003394345, 103.7109375],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_91b5d16458b5462184e8238c93c3bcc0 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a18c26b6b7f64668a92a2dd48bb4d99f = $(`<div id="html_a18c26b6b7f64668a92a2dd48bb4d99f" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_91b5d16458b5462184e8238c93c3bcc0.setContent(html_a18c26b6b7f64668a92a2dd48bb4d99f);
+        
+
+        circle_0a41f24a40d340d4820fd38301fa7be8.bindPopup(popup_91b5d16458b5462184e8238c93c3bcc0)
+        ;
+
+        
+    
+    
+            var circle_9d15424553d444428bba708967fa1be7 = L.circle(
+                [-5.003394345, 103.7109375],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_186480d1d105498a8e00d072a08b2c22 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9a95eb934e9645d092e66b4ac05437e4 = $(`<div id="html_9a95eb934e9645d092e66b4ac05437e4" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_186480d1d105498a8e00d072a08b2c22.setContent(html_9a95eb934e9645d092e66b4ac05437e4);
+        
+
+        circle_9d15424553d444428bba708967fa1be7.bindPopup(popup_186480d1d105498a8e00d072a08b2c22)
+        ;
+
+        
+    
+    
+            var circle_e8a13969e6e94084bb7fcdfc7633a04e = L.circle(
+                [-4.9158328010000005, 103.6230469],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_4c989a8ee89c4ab493ba2077858b8abe = L.popup({"maxWidth": "100%"});
+
+        
+            var html_694f75fc157e44e5b59e54613957c56d = $(`<div id="html_694f75fc157e44e5b59e54613957c56d" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_4c989a8ee89c4ab493ba2077858b8abe.setContent(html_694f75fc157e44e5b59e54613957c56d);
+        
+
+        circle_e8a13969e6e94084bb7fcdfc7633a04e.bindPopup(popup_4c989a8ee89c4ab493ba2077858b8abe)
+        ;
+
+        
+    
+    
+            var circle_be1f8f03f4924a8289958aab4d8e792f = L.circle(
+                [-4.9158328010000005, 103.5351562],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_7502369bb28a45ae9e04963fd96094ea = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0e01d6fcec2b434ca9cc56f01c78a57a = $(`<div id="html_0e01d6fcec2b434ca9cc56f01c78a57a" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_7502369bb28a45ae9e04963fd96094ea.setContent(html_0e01d6fcec2b434ca9cc56f01c78a57a);
+        
+
+        circle_be1f8f03f4924a8289958aab4d8e792f.bindPopup(popup_7502369bb28a45ae9e04963fd96094ea)
+        ;
+
+        
+    
+    
+            var circle_260c35bced1f41e1a9b4d14b6e36a6b5 = L.circle(
+                [-4.828259747, 103.4472656],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_b0e89ff6d79d49649e4c45e150043342 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_34ea653649964a67bc43596fe1b31e90 = $(`<div id="html_34ea653649964a67bc43596fe1b31e90" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_b0e89ff6d79d49649e4c45e150043342.setContent(html_34ea653649964a67bc43596fe1b31e90);
+        
+
+        circle_260c35bced1f41e1a9b4d14b6e36a6b5.bindPopup(popup_b0e89ff6d79d49649e4c45e150043342)
+        ;
+
+        
+    
+    
+            var circle_0a586dca42cd4efe8644d298ec18ac1c = L.circle(
+                [1.054627942, 124.27734369999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_95e35703995f4d8192024cf75f6a0aca = L.popup({"maxWidth": "100%"});
+
+        
+            var html_fad4794a72c240e5a2189cdba6cc3ee2 = $(`<div id="html_fad4794a72c240e5a2189cdba6cc3ee2" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_95e35703995f4d8192024cf75f6a0aca.setContent(html_fad4794a72c240e5a2189cdba6cc3ee2);
+        
+
+        circle_0a586dca42cd4efe8644d298ec18ac1c.bindPopup(popup_95e35703995f4d8192024cf75f6a0aca)
+        ;
+
+        
+    
+    
+            var circle_0304a5df3a97411c84dc438f51d2bbb8 = L.circle(
+                [0.878871783, 123.57421869999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_4266598d3da74edca672b2a4a666dccb = L.popup({"maxWidth": "100%"});
+
+        
+            var html_120e03e702094c6f8243f6aaa411a6bc = $(`<div id="html_120e03e702094c6f8243f6aaa411a6bc" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_4266598d3da74edca672b2a4a666dccb.setContent(html_120e03e702094c6f8243f6aaa411a6bc);
+        
+
+        circle_0304a5df3a97411c84dc438f51d2bbb8.bindPopup(popup_4266598d3da74edca672b2a4a666dccb)
+        ;
+
+        
+    
+    
+            var circle_edcf45a8817446c6bcff5b47b2be3afa = L.circle(
+                [0.878871783, 124.0136719],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_fbac99206955465789c06c86a18e0a57 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_fc51e327c14743cd92d0626047a9f9b2 = $(`<div id="html_fc51e327c14743cd92d0626047a9f9b2" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_fbac99206955465789c06c86a18e0a57.setContent(html_fc51e327c14743cd92d0626047a9f9b2);
+        
+
+        circle_edcf45a8817446c6bcff5b47b2be3afa.bindPopup(popup_fbac99206955465789c06c86a18e0a57)
+        ;
+
+        
+    
+    
+            var circle_14abd43d582a458f98dc8c704500e92b = L.circle(
+                [0.966751, 124.1894531],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_0975684628304e6e866f0e9e90f2c700 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_bc43d6a2e86049dd8020183885b08184 = $(`<div id="html_bc43d6a2e86049dd8020183885b08184" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_0975684628304e6e866f0e9e90f2c700.setContent(html_bc43d6a2e86049dd8020183885b08184);
+        
+
+        circle_14abd43d582a458f98dc8c704500e92b.bindPopup(popup_0975684628304e6e866f0e9e90f2c700)
+        ;
+
+        
+    
+    
+            var circle_37eac0c1a1c34e91bd0cee2a7a869bed = L.circle(
+                [0.790990498, 124.62890619999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_32533727d21f4533be2e3e2664ec12ba = L.popup({"maxWidth": "100%"});
+
+        
+            var html_19f85b4e287546b5927ec9db3c1af5c0 = $(`<div id="html_19f85b4e287546b5927ec9db3c1af5c0" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_32533727d21f4533be2e3e2664ec12ba.setContent(html_19f85b4e287546b5927ec9db3c1af5c0);
+        
+
+        circle_37eac0c1a1c34e91bd0cee2a7a869bed.bindPopup(popup_32533727d21f4533be2e3e2664ec12ba)
+        ;
+
+        
+    
+    
+            var circle_54d80f72dab745bfb4ad038260c316ef = L.circle(
+                [1.406108835, 124.62890619999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_87bbb51cb672417baf3f761b02dd5f6a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5f27f0d941674d6abc45a5b3165ddb74 = $(`<div id="html_5f27f0d941674d6abc45a5b3165ddb74" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_87bbb51cb672417baf3f761b02dd5f6a.setContent(html_5f27f0d941674d6abc45a5b3165ddb74);
+        
+
+        circle_54d80f72dab745bfb4ad038260c316ef.bindPopup(popup_87bbb51cb672417baf3f761b02dd5f6a)
+        ;
+
+        
+    
+    
+            var circle_4bed25beb87149108c08db56784e586c = L.circle(
+                [1.142502404, 124.3652344],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_946d54553fc24c6b89cf700e740c9e98 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_bcbd4c529ae246698eb4f0d0d3166ca8 = $(`<div id="html_bcbd4c529ae246698eb4f0d0d3166ca8" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_946d54553fc24c6b89cf700e740c9e98.setContent(html_bcbd4c529ae246698eb4f0d0d3166ca8);
+        
+
+        circle_4bed25beb87149108c08db56784e586c.bindPopup(popup_946d54553fc24c6b89cf700e740c9e98)
+        ;
+
+        
+    
+    
+            var circle_a9b33bc960874af3a4b4600c43abef65 = L.circle(
+                [0.966751, 124.8046875],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_1db5492916ff4cb89984f88ec9cce7b1 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_48a826f5cfe7456c97b692471d17b030 = $(`<div id="html_48a826f5cfe7456c97b692471d17b030" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_1db5492916ff4cb89984f88ec9cce7b1.setContent(html_48a826f5cfe7456c97b692471d17b030);
+        
+
+        circle_a9b33bc960874af3a4b4600c43abef65.bindPopup(popup_1db5492916ff4cb89984f88ec9cce7b1)
+        ;
+
+        
+    
+    
+            var circle_7fd14d6b1aad4d30994b1046cb1c8a89 = L.circle(
+                [1.230374177, 124.453125],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_327ea06818754ed38736f5e6f792dbce = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a7da17352b97470d96505ed9145f61b9 = $(`<div id="html_a7da17352b97470d96505ed9145f61b9" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_327ea06818754ed38736f5e6f792dbce.setContent(html_a7da17352b97470d96505ed9145f61b9);
+        
+
+        circle_7fd14d6b1aad4d30994b1046cb1c8a89.bindPopup(popup_327ea06818754ed38736f5e6f792dbce)
+        ;
+
+        
+    
+    
+            var circle_18c2f5ad980d4d7481061672d799406b = L.circle(
+                [-2.460181181, 121.81640619999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_e81e912a63d146a1b47d3087411c6096 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_abc58126132449aeb0cb61e48a186958 = $(`<div id="html_abc58126132449aeb0cb61e48a186958" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_e81e912a63d146a1b47d3087411c6096.setContent(html_abc58126132449aeb0cb61e48a186958);
+        
+
+        circle_18c2f5ad980d4d7481061672d799406b.bindPopup(popup_e81e912a63d146a1b47d3087411c6096)
+        ;
+
+        
+    
+    
+            var circle_62eab11044214a40a61206a4682974dd = L.circle(
+                [-1.313666123, 138.3398437],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_ada1b73fa0fe466595a5d24de71c6ef2 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6389baa3b31f47c99bd22f03231bc2c8 = $(`<div id="html_6389baa3b31f47c99bd22f03231bc2c8" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_ada1b73fa0fe466595a5d24de71c6ef2.setContent(html_6389baa3b31f47c99bd22f03231bc2c8);
+        
+
+        circle_62eab11044214a40a61206a4682974dd.bindPopup(popup_ada1b73fa0fe466595a5d24de71c6ef2)
+        ;
+
+        
+    
+    
+            var circle_1822afb1bad748be9dd8ea655dc27365 = L.circle(
+                [-1.2486192870000001, 138.2519531],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_899525c23918484fa5565c0149222527 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_09d37249f210412b817176fdaea89d86 = $(`<div id="html_09d37249f210412b817176fdaea89d86" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_899525c23918484fa5565c0149222527.setContent(html_09d37249f210412b817176fdaea89d86);
+        
+
+        circle_1822afb1bad748be9dd8ea655dc27365.bindPopup(popup_899525c23918484fa5565c0149222527)
+        ;
+
+        
+    
+    
+            var circle_cbf2dd8a816845448e9ffdfd305e0080 = L.circle(
+                [-7.49319647, 107.3144531],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_98ad8ca0932143a2a855cf41e443c73d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c6c382fc92ea4ab2883b1f390234c92b = $(`<div id="html_c6c382fc92ea4ab2883b1f390234c92b" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_98ad8ca0932143a2a855cf41e443c73d.setContent(html_c6c382fc92ea4ab2883b1f390234c92b);
+        
+
+        circle_cbf2dd8a816845448e9ffdfd305e0080.bindPopup(popup_98ad8ca0932143a2a855cf41e443c73d)
+        ;
+
+        
+    
+    
+            var circle_59836f010d924e74a81d4016b937ea57 = L.circle(
+                [-6.22793393, 107.8857422],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_c1c074a751e0454184603ef0bf580bc9 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7b1deee944da4549b2639fd441e4d2a8 = $(`<div id="html_7b1deee944da4549b2639fd441e4d2a8" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_c1c074a751e0454184603ef0bf580bc9.setContent(html_7b1deee944da4549b2639fd441e4d2a8);
+        
+
+        circle_59836f010d924e74a81d4016b937ea57.bindPopup(popup_c1c074a751e0454184603ef0bf580bc9)
+        ;
+
+        
+    
+    
+            var circle_c6b352a5c7e24b4a9d05e6449f0a5fd7 = L.circle(
+                [-6.446317748999999, 110.7861328],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_88e46ac62e934a27ac1d23c16e19973b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_73bfceab62d84bf18fd242bb23214a1a = $(`<div id="html_73bfceab62d84bf18fd242bb23214a1a" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_88e46ac62e934a27ac1d23c16e19973b.setContent(html_73bfceab62d84bf18fd242bb23214a1a);
+        
+
+        circle_c6b352a5c7e24b4a9d05e6449f0a5fd7.bindPopup(popup_88e46ac62e934a27ac1d23c16e19973b)
+        ;
+
+        
+    
+    
+            var circle_5a1775a97a434f409cca39ebd81b50ad = L.circle(
+                [-7.536764322000001, 112.67578119999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_46dfb33ee18746e6a64b2e9d99dc1031 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_26efa02e08764ae38aa124e40fa7d26a = $(`<div id="html_26efa02e08764ae38aa124e40fa7d26a" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_46dfb33ee18746e6a64b2e9d99dc1031.setContent(html_26efa02e08764ae38aa124e40fa7d26a);
+        
+
+        circle_5a1775a97a434f409cca39ebd81b50ad.bindPopup(popup_46dfb33ee18746e6a64b2e9d99dc1031)
+        ;
+
+        
+    
+    
+            var circle_39f0294529a04db5afc041529ee24de0 = L.circle(
+                [-6.402648406, 110.87402340000001],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_7ab3ca83b14640b6838772113c7f471d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9216361467534aa592eec92e9904fb44 = $(`<div id="html_9216361467534aa592eec92e9904fb44" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_7ab3ca83b14640b6838772113c7f471d.setContent(html_9216361467534aa592eec92e9904fb44);
+        
+
+        circle_39f0294529a04db5afc041529ee24de0.bindPopup(popup_7ab3ca83b14640b6838772113c7f471d)
+        ;
+
+        
+    
+    
+            var circle_a90fa8cc3fff4c308c9576298afb9f4e = L.circle(
+                [-6.402648406, 110.96191409999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_4e8ec6a326c14b7aadb39853d59b1874 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ec724f4447684fde95569369e38ecbe2 = $(`<div id="html_ec724f4447684fde95569369e38ecbe2" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_4e8ec6a326c14b7aadb39853d59b1874.setContent(html_ec724f4447684fde95569369e38ecbe2);
+        
+
+        circle_a90fa8cc3fff4c308c9576298afb9f4e.bindPopup(popup_4e8ec6a326c14b7aadb39853d59b1874)
+        ;
+
+        
+    
+    
+            var circle_e3b0467c73d64b599c0ffa182d3854f4 = L.circle(
+                [-7.754537347, 108.45703119999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_14bd867a517a41f7933a4906393685fd = L.popup({"maxWidth": "100%"});
+
+        
+            var html_cfd3c9a6182e4185a4ee6ea46767e815 = $(`<div id="html_cfd3c9a6182e4185a4ee6ea46767e815" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_14bd867a517a41f7933a4906393685fd.setContent(html_cfd3c9a6182e4185a4ee6ea46767e815);
+        
+
+        circle_e3b0467c73d64b599c0ffa182d3854f4.bindPopup(popup_14bd867a517a41f7933a4906393685fd)
+        ;
+
+        
+    
+    
+            var circle_642e5d3654ec4d21aaea76b1400dfd18 = L.circle(
+                [-7.754537347, 108.10546869999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_281e7a20f17f47fba31ef4ebc14ac095 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_48483a5dc2714262ae247ebe8b12e7d4 = $(`<div id="html_48483a5dc2714262ae247ebe8b12e7d4" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_281e7a20f17f47fba31ef4ebc14ac095.setContent(html_48483a5dc2714262ae247ebe8b12e7d4);
+        
+
+        circle_642e5d3654ec4d21aaea76b1400dfd18.bindPopup(popup_281e7a20f17f47fba31ef4ebc14ac095)
+        ;
+
+        
+    
+    
+            var circle_9a2d825403ab44b8a0ff958701a0f02a = L.circle(
+                [-7.710991655, 107.9736328],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_805e78f911c54ff2a8b193b140362e3a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f8cbe50fddd84197911cc0df2a11c1a9 = $(`<div id="html_f8cbe50fddd84197911cc0df2a11c1a9" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_805e78f911c54ff2a8b193b140362e3a.setContent(html_f8cbe50fddd84197911cc0df2a11c1a9);
+        
+
+        circle_9a2d825403ab44b8a0ff958701a0f02a.bindPopup(popup_805e78f911c54ff2a8b193b140362e3a)
+        ;
+
+        
+    
+    
+            var circle_ed643475016646d99792d5de88e909ec = L.circle(
+                [-7.667441482999999, 108.5888672],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_0e662d03c3964d7db044440f7741c93d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_785e802659074f9cb9492562a808d5ec = $(`<div id="html_785e802659074f9cb9492562a808d5ec" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_0e662d03c3964d7db044440f7741c93d.setContent(html_785e802659074f9cb9492562a808d5ec);
+        
+
+        circle_ed643475016646d99792d5de88e909ec.bindPopup(popup_0e662d03c3964d7db044440f7741c93d)
+        ;
+
+        
+    
+    
+            var circle_09ab8aed042545fd952052b5852bc5ea = L.circle(
+                [-7.710991655, 109.20410159999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_f4c84414334842648c073c51d5a6864c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_056d2addd46e4e52aa98d18c19a9365f = $(`<div id="html_056d2addd46e4e52aa98d18c19a9365f" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_f4c84414334842648c073c51d5a6864c.setContent(html_056d2addd46e4e52aa98d18c19a9365f);
+        
+
+        circle_09ab8aed042545fd952052b5852bc5ea.bindPopup(popup_f4c84414334842648c073c51d5a6864c)
+        ;
+
+        
+    
+    
+            var circle_474c1033896c4de492656dcb53a1324a = L.circle(
+                [-7.841615185, 109.90722659999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_ec2b2f78de6649cf8e742852cf6c89a8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_af806b80132f4e729847cd8073d484aa = $(`<div id="html_af806b80132f4e729847cd8073d484aa" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_ec2b2f78de6649cf8e742852cf6c89a8.setContent(html_af806b80132f4e729847cd8073d484aa);
+        
+
+        circle_474c1033896c4de492656dcb53a1324a.bindPopup(popup_ec2b2f78de6649cf8e742852cf6c89a8)
+        ;
+
+        
+    
+    
+            var circle_351fe3b47fdb4d7aa99ca7717dca8afb = L.circle(
+                [-7.9286748010000005, 110.1269531],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_077920a2264248499bb2adf342450a36 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1a5ff5380d35463caf2790d0f122ec17 = $(`<div id="html_1a5ff5380d35463caf2790d0f122ec17" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_077920a2264248499bb2adf342450a36.setContent(html_1a5ff5380d35463caf2790d0f122ec17);
+        
+
+        circle_351fe3b47fdb4d7aa99ca7717dca8afb.bindPopup(popup_077920a2264248499bb2adf342450a36)
+        ;
+
+        
+    
+    
+            var circle_d80cf74f2f4142d9bef0165ad9a1c401 = L.circle(
+                [-7.972197714, 110.25878909999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_f94593ec97c943ba834fcd22862045c5 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_007155a6628c4796a2c95fb2dcd25338 = $(`<div id="html_007155a6628c4796a2c95fb2dcd25338" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_f94593ec97c943ba834fcd22862045c5.setContent(html_007155a6628c4796a2c95fb2dcd25338);
+        
+
+        circle_d80cf74f2f4142d9bef0165ad9a1c401.bindPopup(popup_f94593ec97c943ba834fcd22862045c5)
+        ;
+
+        
+    
+    
+            var circle_bbecc5089fc241f880f55ce207ebf213 = L.circle(
+                [-8.233237111000001, 111.8408203],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_908c87e8b74a4eb683a7da5fc84d76da = L.popup({"maxWidth": "100%"});
+
+        
+            var html_90259b1c60484a3194ffdedc414f778e = $(`<div id="html_90259b1c60484a3194ffdedc414f778e" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_908c87e8b74a4eb683a7da5fc84d76da.setContent(html_90259b1c60484a3194ffdedc414f778e);
+        
+
+        circle_bbecc5089fc241f880f55ce207ebf213.bindPopup(popup_908c87e8b74a4eb683a7da5fc84d76da)
+        ;
+
+        
+    
+    
+            var circle_04a0d566ff6740e3ab0c34c6770f22f8 = L.circle(
+                [-8.276727101, 113.2910156],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_18adacf605874c1c9ea358335971c8e9 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_742d549728dd46d8b86a5eccf8b85116 = $(`<div id="html_742d549728dd46d8b86a5eccf8b85116" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_18adacf605874c1c9ea358335971c8e9.setContent(html_742d549728dd46d8b86a5eccf8b85116);
+        
+
+        circle_04a0d566ff6740e3ab0c34c6770f22f8.bindPopup(popup_18adacf605874c1c9ea358335971c8e9)
+        ;
+
+        
+    
+    
+            var circle_170ab90ecf2c48059c5208566f0b65da = L.circle(
+                [-8.276727101, 111.97265619999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_19fd29689c294aeaa849c81b8d872331 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ff80abbdbf44429d8a643d0aa2bb0958 = $(`<div id="html_ff80abbdbf44429d8a643d0aa2bb0958" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_19fd29689c294aeaa849c81b8d872331.setContent(html_ff80abbdbf44429d8a643d0aa2bb0958);
+        
+
+        circle_170ab90ecf2c48059c5208566f0b65da.bindPopup(popup_19fd29689c294aeaa849c81b8d872331)
+        ;
+
+        
+    
+    
+            var circle_ee43e74824624153a1e59ee9cf7dde3a = L.circle(
+                [-7.798078531, 108.14941409999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_c9016ac163aa4f3b93031d5badf55d39 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_068a2a48bd334941b443fe9fa8632c11 = $(`<div id="html_068a2a48bd334941b443fe9fa8632c11" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_c9016ac163aa4f3b93031d5badf55d39.setContent(html_068a2a48bd334941b443fe9fa8632c11);
+        
+
+        circle_ee43e74824624153a1e59ee9cf7dde3a.bindPopup(popup_c9016ac163aa4f3b93031d5badf55d39)
+        ;
+
+        
+    
+    
+            var circle_bac77fdee4884b988cc628106bb17ccb = L.circle(
+                [-7.667441482999999, 109.2919922],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_e37002de70c548eda09ddf42c66b0227 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_49fbf31ff56849309c780f0cf67ef16b = $(`<div id="html_49fbf31ff56849309c780f0cf67ef16b" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_e37002de70c548eda09ddf42c66b0227.setContent(html_49fbf31ff56849309c780f0cf67ef16b);
+        
+
+        circle_bac77fdee4884b988cc628106bb17ccb.bindPopup(popup_e37002de70c548eda09ddf42c66b0227)
+        ;
+
+        
+    
+    
+            var circle_f519d732791b4ea88eb7e93aeb2d9c30 = L.circle(
+                [-7.667441482999999, 109.11621090000001],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_20b2f7d74d3347ef95b71887c6613256 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_56dfcecf1b2645f7923919e78ff4a507 = $(`<div id="html_56dfcecf1b2645f7923919e78ff4a507" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_20b2f7d74d3347ef95b71887c6613256.setContent(html_56dfcecf1b2645f7923919e78ff4a507);
+        
+
+        circle_f519d732791b4ea88eb7e93aeb2d9c30.bindPopup(popup_20b2f7d74d3347ef95b71887c6613256)
+        ;
+
+        
+    
+    
+            var circle_d5f9463e2e91454e94fe978ef75dd7cc = L.circle(
+                [-7.798078531, 108.3251953],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_076c3b9c47744c0aac9a842fee789f62 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_51cbe33766884dcc8e12499e18d7e0c2 = $(`<div id="html_51cbe33766884dcc8e12499e18d7e0c2" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_076c3b9c47744c0aac9a842fee789f62.setContent(html_51cbe33766884dcc8e12499e18d7e0c2);
+        
+
+        circle_d5f9463e2e91454e94fe978ef75dd7cc.bindPopup(popup_076c3b9c47744c0aac9a842fee789f62)
+        ;
+
+        
+    
+    
+            var circle_76701b925d784a1fadb44795e472529d = L.circle(
+                [-7.798078531, 108.1933594],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_6c6c3a588e04479eb125f2bc1b0d3ed7 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c7abed4bd39f4ef29e5c6fda9ade27ee = $(`<div id="html_c7abed4bd39f4ef29e5c6fda9ade27ee" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_6c6c3a588e04479eb125f2bc1b0d3ed7.setContent(html_c7abed4bd39f4ef29e5c6fda9ade27ee);
+        
+
+        circle_76701b925d784a1fadb44795e472529d.bindPopup(popup_6c6c3a588e04479eb125f2bc1b0d3ed7)
+        ;
+
+        
+    
+    
+            var circle_e77bfd744f75417fba636f851b059380 = L.circle(
+                [-7.798078531, 108.28125],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_e623b0ff82a24126b19c2405a97c1745 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_dd945182210d439da320b48c367708a8 = $(`<div id="html_dd945182210d439da320b48c367708a8" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_e623b0ff82a24126b19c2405a97c1745.setContent(html_dd945182210d439da320b48c367708a8);
+        
+
+        circle_e77bfd744f75417fba636f851b059380.bindPopup(popup_e623b0ff82a24126b19c2405a97c1745)
+        ;
+
+        
+    
+    
+            var circle_2f2be44c9504469fb214c2a70a5f46d8 = L.circle(
+                [-8.276727101, 113.1591797],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_df7dcd7c5b7949b584f02a56b05dd13c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b7d48547bd134408ba0e21ad9afbc521 = $(`<div id="html_b7d48547bd134408ba0e21ad9afbc521" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_df7dcd7c5b7949b584f02a56b05dd13c.setContent(html_b7d48547bd134408ba0e21ad9afbc521);
+        
+
+        circle_2f2be44c9504469fb214c2a70a5f46d8.bindPopup(popup_df7dcd7c5b7949b584f02a56b05dd13c)
+        ;
+
+        
+    
+    
+            var circle_1a4caca94c344b3bbaff44893b96e1c3 = L.circle(
+                [-7.798078531, 109.7753906],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_357983a8820d47be9142fdd42b1845ff = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0ba03e06f8d6491f84bd71f05a628140 = $(`<div id="html_0ba03e06f8d6491f84bd71f05a628140" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_357983a8820d47be9142fdd42b1845ff.setContent(html_0ba03e06f8d6491f84bd71f05a628140);
+        
+
+        circle_1a4caca94c344b3bbaff44893b96e1c3.bindPopup(popup_357983a8820d47be9142fdd42b1845ff)
+        ;
+
+        
+    
+    
+            var circle_bedf37c04a744112b28bdee8013e05e7 = L.circle(
+                [-8.320212289, 113.33496090000001],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_9575a0afda1340afb42b641fef5ba44e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_474aaf4b6b8c44069e05b4260d3de601 = $(`<div id="html_474aaf4b6b8c44069e05b4260d3de601" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_9575a0afda1340afb42b641fef5ba44e.setContent(html_474aaf4b6b8c44069e05b4260d3de601);
+        
+
+        circle_bedf37c04a744112b28bdee8013e05e7.bindPopup(popup_9575a0afda1340afb42b641fef5ba44e)
+        ;
+
+        
+    
+    
+            var circle_c9c39eef60014a1a88108f8cdc262ae0 = L.circle(
+                [-8.320212289, 112.1923828],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_8119143f05034356b9d9a988394b79fd = L.popup({"maxWidth": "100%"});
+
+        
+            var html_aa7a294a694544a8acdd122b1bb551ce = $(`<div id="html_aa7a294a694544a8acdd122b1bb551ce" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_8119143f05034356b9d9a988394b79fd.setContent(html_aa7a294a694544a8acdd122b1bb551ce);
+        
+
+        circle_c9c39eef60014a1a88108f8cdc262ae0.bindPopup(popup_8119143f05034356b9d9a988394b79fd)
+        ;
+
+        
+    
+    
+            var circle_47059065646c4f6282e3ffdcfe5645db = L.circle(
+                [-7.667441482999999, 109.16015619999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_cdf3405f5d164f8697e9c279dbae3be2 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6850a8220ea84553b141032a11464182 = $(`<div id="html_6850a8220ea84553b141032a11464182" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_cdf3405f5d164f8697e9c279dbae3be2.setContent(html_6850a8220ea84553b141032a11464182);
+        
+
+        circle_47059065646c4f6282e3ffdcfe5645db.bindPopup(popup_cdf3405f5d164f8697e9c279dbae3be2)
+        ;
+
+        
+    
+    
+            var circle_25e8821bbafc4a72ab9336fd6961b29c = L.circle(
+                [-7.667441482999999, 109.2919922],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_abc2f4cc63fd40718590ae962d843d50 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_27e3708af32f4ff7bdf74b3c54ce8b5f = $(`<div id="html_27e3708af32f4ff7bdf74b3c54ce8b5f" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_abc2f4cc63fd40718590ae962d843d50.setContent(html_27e3708af32f4ff7bdf74b3c54ce8b5f);
+        
+
+        circle_25e8821bbafc4a72ab9336fd6961b29c.bindPopup(popup_abc2f4cc63fd40718590ae962d843d50)
+        ;
+
+        
+    
+    
+            var circle_9405604353fa45508a07550c0495ef39 = L.circle(
+                [-8.320212289, 112.32421869999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_301d2414d2784867800fb407ba820e7f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_908fb923712247568f16158f3bbdb9c1 = $(`<div id="html_908fb923712247568f16158f3bbdb9c1" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_301d2414d2784867800fb407ba820e7f.setContent(html_908fb923712247568f16158f3bbdb9c1);
+        
+
+        circle_9405604353fa45508a07550c0495ef39.bindPopup(popup_301d2414d2784867800fb407ba820e7f)
+        ;
+
+        
+    
+    
+            var circle_5263462fe3834e479f0ab3b7840a8441 = L.circle(
+                [0.940574479, 124.32128909999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_c2265230cb31454e96ee91a5700813c0 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ac64e047f0d14b1e8069d9b6ecd6960f = $(`<div id="html_ac64e047f0d14b1e8069d9b6ecd6960f" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_c2265230cb31454e96ee91a5700813c0.setContent(html_ac64e047f0d14b1e8069d9b6ecd6960f);
+        
+
+        circle_5263462fe3834e479f0ab3b7840a8441.bindPopup(popup_c2265230cb31454e96ee91a5700813c0)
+        ;
+
+        
+    
+    
+            var circle_fc7671c8b414401e8513a7cdcbe0e9b3 = L.circle(
+                [0.8175478970000001, 123.57421869999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_f5c0b817a3c74c128fedd19887232ac6 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7c128c9bfc99400ea53ade84b6512455 = $(`<div id="html_7c128c9bfc99400ea53ade84b6512455" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_f5c0b817a3c74c128fedd19887232ac6.setContent(html_7c128c9bfc99400ea53ade84b6512455);
+        
+
+        circle_fc7671c8b414401e8513a7cdcbe0e9b3.bindPopup(popup_f5c0b817a3c74c128fedd19887232ac6)
+        ;
+
+        
+    
+    
+            var circle_d51761677da44dc7aaf2c5784e10bc1f = L.circle(
+                [0.8175478970000001, 124.0136719],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_63c7519b2ccf4a4a99e147ffa723b4f8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_54371d2730fa4d91b2df6f238a76a5e1 = $(`<div id="html_54371d2730fa4d91b2df6f238a76a5e1" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_63c7519b2ccf4a4a99e147ffa723b4f8.setContent(html_54371d2730fa4d91b2df6f238a76a5e1);
+        
+
+        circle_d51761677da44dc7aaf2c5784e10bc1f.bindPopup(popup_63c7519b2ccf4a4a99e147ffa723b4f8)
+        ;
+
+        
+    
+    
+            var circle_804bea38420648d09b20d38e1fb28986 = L.circle(
+                [0.899554317, 124.1894531],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_9c96f887473d4d2da9da0257793ec90c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d8abc9bcacb345fda5aa6f72273ddf7b = $(`<div id="html_d8abc9bcacb345fda5aa6f72273ddf7b" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_9c96f887473d4d2da9da0257793ec90c.setContent(html_d8abc9bcacb345fda5aa6f72273ddf7b);
+        
+
+        circle_804bea38420648d09b20d38e1fb28986.bindPopup(popup_9c96f887473d4d2da9da0257793ec90c)
+        ;
+
+        
+    
+    
+            var circle_074bbd678d2d497b95948b3055d7b075 = L.circle(
+                [0.735586803, 124.62890619999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_2d8e2b29d9234eada429dbaea462c6aa = L.popup({"maxWidth": "100%"});
+
+        
+            var html_997fa2f9e36c4cfba2a3f366706dbdc0 = $(`<div id="html_997fa2f9e36c4cfba2a3f366706dbdc0" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_2d8e2b29d9234eada429dbaea462c6aa.setContent(html_997fa2f9e36c4cfba2a3f366706dbdc0);
+        
+
+        circle_074bbd678d2d497b95948b3055d7b075.bindPopup(popup_2d8e2b29d9234eada429dbaea462c6aa)
+        ;
+
+        
+    
+    
+            var circle_cc76ed628f54497e9051b1497a618159 = L.circle(
+                [1.310261283, 124.58496090000001],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_cb10c9e775694482aef1598d409a0270 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_09f6b35aa9f241e48d19117609732ade = $(`<div id="html_09f6b35aa9f241e48d19117609732ade" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_cb10c9e775694482aef1598d409a0270.setContent(html_09f6b35aa9f241e48d19117609732ade);
+        
+
+        circle_cc76ed628f54497e9051b1497a618159.bindPopup(popup_cb10c9e775694482aef1598d409a0270)
+        ;
+
+        
+    
+    
+            var circle_a0a24e1cfeff46569afda4caaaba032c = L.circle(
+                [1.104767727, 124.4091797],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_0caacb4057104b5688f33cd40739f2e8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6e5ebbb6972d4a52bd3a4c3147ce357d = $(`<div id="html_6e5ebbb6972d4a52bd3a4c3147ce357d" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_0caacb4057104b5688f33cd40739f2e8.setContent(html_6e5ebbb6972d4a52bd3a4c3147ce357d);
+        
+
+        circle_a0a24e1cfeff46569afda4caaaba032c.bindPopup(popup_0caacb4057104b5688f33cd40739f2e8)
+        ;
+
+        
+    
+    
+            var circle_7a9b96d1d8c840a1800feb709f563c4c = L.circle(
+                [0.899554317, 124.8046875],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_f05ccb6c3cd744f0b954550ce6985888 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c4ef215943364c38b1e0d6971ab7a203 = $(`<div id="html_c4ef215943364c38b1e0d6971ab7a203" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_f05ccb6c3cd744f0b954550ce6985888.setContent(html_c4ef215943364c38b1e0d6971ab7a203);
+        
+
+        circle_7a9b96d1d8c840a1800feb709f563c4c.bindPopup(popup_f05ccb6c3cd744f0b954550ce6985888)
+        ;
+
+        
+    
+    
+            var circle_ed275dc4ddb344a1b3dee8dc58a9806f = L.circle(
+                [1.104767727, 124.453125],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_afff7eff3ce04c9b8a023b8644b02735 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_608be52b42254fcfa4890c8587c4d928 = $(`<div id="html_608be52b42254fcfa4890c8587c4d928" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_afff7eff3ce04c9b8a023b8644b02735.setContent(html_608be52b42254fcfa4890c8587c4d928);
+        
+
+        circle_ed275dc4ddb344a1b3dee8dc58a9806f.bindPopup(popup_afff7eff3ce04c9b8a023b8644b02735)
+        ;
+
+        
+    
+    
+            var circle_d469a99a9350415780e36275f1a67d4c = L.circle(
+                [0.899554317, 128.45214840000003],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_3c2886154ff546dbad05c5af3432cbe0 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1ecb9aeab8344fbb931ff2fa35396eca = $(`<div id="html_1ecb9aeab8344fbb931ff2fa35396eca" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_3c2886154ff546dbad05c5af3432cbe0.setContent(html_1ecb9aeab8344fbb931ff2fa35396eca);
+        
+
+        circle_d469a99a9350415780e36275f1a67d4c.bindPopup(popup_3c2886154ff546dbad05c5af3432cbe0)
+        ;
+
+        
+    
+    
+            var circle_2101815352ec4b7f814369bd4e6c37de = L.circle(
+                [1.8871142680000002, 127.96875],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_182686230408460bac55a4034dfeec0a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_19a8451d68c74dff8fd309354434c777 = $(`<div id="html_19a8451d68c74dff8fd309354434c777" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_182686230408460bac55a4034dfeec0a.setContent(html_19a8451d68c74dff8fd309354434c777);
+        
+
+        circle_2101815352ec4b7f814369bd4e6c37de.bindPopup(popup_182686230408460bac55a4034dfeec0a)
+        ;
+
+        
+    
+    
+            var circle_83e500addb284a6f82282efaa0c97a74 = L.circle(
+                [1.804575221, 127.7050781],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_a6c8cac129c545c5a79bee0c635efc80 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3e6b701029474d7488c24d920c51c3bf = $(`<div id="html_3e6b701029474d7488c24d920c51c3bf" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_a6c8cac129c545c5a79bee0c635efc80.setContent(html_3e6b701029474d7488c24d920c51c3bf);
+        
+
+        circle_83e500addb284a6f82282efaa0c97a74.bindPopup(popup_a6c8cac129c545c5a79bee0c635efc80)
+        ;
+
+        
+    
+    
+            var circle_796afcdb13554ae89b50ab0672ff3bb6 = L.circle(
+                [1.928400088, 127.83691409999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_5311083192194240bb351c81e91cf8f1 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b536de85360a4d3793b47f18968dc605 = $(`<div id="html_b536de85360a4d3793b47f18968dc605" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_5311083192194240bb351c81e91cf8f1.setContent(html_b536de85360a4d3793b47f18968dc605);
+        
+
+        circle_796afcdb13554ae89b50ab0672ff3bb6.bindPopup(popup_5311083192194240bb351c81e91cf8f1)
+        ;
+
+        
+    
+    
+            var circle_dcffbba03f5147b9ae1bb10336fc1fc4 = L.circle(
+                [1.969696747, 127.83691409999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_8f6bfa0b369b46d19351b5ba8adbc2a4 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_39d105f74ccc45e4829d932def8782a1 = $(`<div id="html_39d105f74ccc45e4829d932def8782a1" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_8f6bfa0b369b46d19351b5ba8adbc2a4.setContent(html_39d105f74ccc45e4829d932def8782a1);
+        
+
+        circle_dcffbba03f5147b9ae1bb10336fc1fc4.bindPopup(popup_8f6bfa0b369b46d19351b5ba8adbc2a4)
+        ;
+
+        
+    
+    
+            var circle_394c2921f7ad45ceab325e83f41e54a9 = L.circle(
+                [1.8871142680000002, 127.79296869999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_fadb189fe1a1470f8e572b5f49d3fc30 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4fd643dfaa1441e395d6e8b35252f491 = $(`<div id="html_4fd643dfaa1441e395d6e8b35252f491" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_fadb189fe1a1470f8e572b5f49d3fc30.setContent(html_4fd643dfaa1441e395d6e8b35252f491);
+        
+
+        circle_394c2921f7ad45ceab325e83f41e54a9.bindPopup(popup_fadb189fe1a1470f8e572b5f49d3fc30)
+        ;
+
+        
+    
+    
+            var circle_f878e4ea6278445f9909d60e910d072d = L.circle(
+                [1.845839306, 127.74902340000001],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_9194ed4cdf1142d4a1839d42d307185b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_161f2f09cbdd48208658d39c2d775661 = $(`<div id="html_161f2f09cbdd48208658d39c2d775661" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_9194ed4cdf1142d4a1839d42d307185b.setContent(html_161f2f09cbdd48208658d39c2d775661);
+        
+
+        circle_f878e4ea6278445f9909d60e910d072d.bindPopup(popup_9194ed4cdf1142d4a1839d42d307185b)
+        ;
+
+        
+    
+    
+            var circle_ec6d57d5b142435e83a4c8d09c695e3a = L.circle(
+                [2.259075298, 128.3203125],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_f586f64a7f3b4395bd308d56e0a9278c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6d9f4b0a4e0f42de8502dc895172cd0e = $(`<div id="html_6d9f4b0a4e0f42de8502dc895172cd0e" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_f586f64a7f3b4395bd308d56e0a9278c.setContent(html_6d9f4b0a4e0f42de8502dc895172cd0e);
+        
+
+        circle_ec6d57d5b142435e83a4c8d09c695e3a.bindPopup(popup_f586f64a7f3b4395bd308d56e0a9278c)
+        ;
+
+        
+    
+    
+            var circle_bafa5dd628874175b5cdd3bc84471507 = L.circle(
+                [2.3004579990000003, 128.3203125],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_127fe0c4cbcf497e94ad2f388bf4a1e0 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d9616db00dcf47a09ca8d8dde04dfa1f = $(`<div id="html_d9616db00dcf47a09ca8d8dde04dfa1f" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_127fe0c4cbcf497e94ad2f388bf4a1e0.setContent(html_d9616db00dcf47a09ca8d8dde04dfa1f);
+        
+
+        circle_bafa5dd628874175b5cdd3bc84471507.bindPopup(popup_127fe0c4cbcf497e94ad2f388bf4a1e0)
+        ;
+
+        
+    
+    
+            var circle_df6af26def3649668eee60f908ebc202 = L.circle(
+                [2.341851372, 128.3642578],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_75b4545576994305844a670fceaf87a1 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_77b89adedf54497c9c5b0be6eb945633 = $(`<div id="html_77b89adedf54497c9c5b0be6eb945633" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_75b4545576994305844a670fceaf87a1.setContent(html_77b89adedf54497c9c5b0be6eb945633);
+        
+
+        circle_df6af26def3649668eee60f908ebc202.bindPopup(popup_75b4545576994305844a670fceaf87a1)
+        ;
+
+        
+    
+    
+            var circle_00514d08e6d84da0ae4879a374a4a6a6 = L.circle(
+                [2.3832553969999997, 128.6279297],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_9f697534532f4c9f9fa7956d0cdaef29 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_bcaf30a8fa9b49aebd31a544673ace7a = $(`<div id="html_bcaf30a8fa9b49aebd31a544673ace7a" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_9f697534532f4c9f9fa7956d0cdaef29.setContent(html_bcaf30a8fa9b49aebd31a544673ace7a);
+        
+
+        circle_00514d08e6d84da0ae4879a374a4a6a6.bindPopup(popup_9f697534532f4c9f9fa7956d0cdaef29)
+        ;
+
+        
+    
+    
+            var circle_c2a0ebbcbe2341d9a3af40088d8497e2 = L.circle(
+                [2.3004579990000003, 128.671875],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_81d536c8e31c4d6bb145ae791e5e2e73 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_aee86cf5d9c44c348455ba41ad939007 = $(`<div id="html_aee86cf5d9c44c348455ba41ad939007" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_81d536c8e31c4d6bb145ae791e5e2e73.setContent(html_aee86cf5d9c44c348455ba41ad939007);
+        
+
+        circle_c2a0ebbcbe2341d9a3af40088d8497e2.bindPopup(popup_81d536c8e31c4d6bb145ae791e5e2e73)
+        ;
+
+        
+    
+    
+            var circle_6ae07fdfdd4243e1a53719edccf5f28a = L.circle(
+                [-8.798225459, 121.46484369999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_de8ebf9e254e43b2852675060649ef11 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_fca551a91fc94985a06b1349d511241c = $(`<div id="html_fca551a91fc94985a06b1349d511241c" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_de8ebf9e254e43b2852675060649ef11.setContent(html_fca551a91fc94985a06b1349d511241c);
+        
+
+        circle_6ae07fdfdd4243e1a53719edccf5f28a.bindPopup(popup_de8ebf9e254e43b2852675060649ef11)
+        ;
+
+        
+    
+    
+            var circle_141506b2973d4db29571bc207bbc29ae = L.circle(
+                [-9.362352822, 119.4433594],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_0a2ccc15321a47a2a0201bac1a431e31 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8a54779b176a4405be051ecfbd566d5a = $(`<div id="html_8a54779b176a4405be051ecfbd566d5a" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_0a2ccc15321a47a2a0201bac1a431e31.setContent(html_8a54779b176a4405be051ecfbd566d5a);
+        
+
+        circle_141506b2973d4db29571bc207bbc29ae.bindPopup(popup_0a2ccc15321a47a2a0201bac1a431e31)
+        ;
+
+        
+    
+    
+            var circle_5fa05f5cf8f441f4acc2dd30fe59b06e = L.circle(
+                [-9.795677583, 120.5859375],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_2970f026f60544b6bc88dfad536546ab = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b0e316069bcf43aeb848006620340755 = $(`<div id="html_b0e316069bcf43aeb848006620340755" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_2970f026f60544b6bc88dfad536546ab.setContent(html_b0e316069bcf43aeb848006620340755);
+        
+
+        circle_5fa05f5cf8f441f4acc2dd30fe59b06e.bindPopup(popup_2970f026f60544b6bc88dfad536546ab)
+        ;
+
+        
+    
+    
+            var circle_9273dbe9838b4c6893be7dea9466ee77 = L.circle(
+                [-7.057282353, 120.71777340000001],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_e03fb5581a134687ac36c6e6c940b6db = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e05fe4ba3a504086a60c5080cd3bee86 = $(`<div id="html_e05fe4ba3a504086a60c5080cd3bee86" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_e03fb5581a134687ac36c6e6c940b6db.setContent(html_e05fe4ba3a504086a60c5080cd3bee86);
+        
+
+        circle_9273dbe9838b4c6893be7dea9466ee77.bindPopup(popup_e03fb5581a134687ac36c6e6c940b6db)
+        ;
+
+        
+    
+    
+            var circle_826cebd1e6a8421cb1534ed32b1a9625 = L.circle(
+                [-8.841651121, 120.6738281],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_10e0256e198b4af5a8a9bb1add2c9893 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e0731b629ac3464fa5adf39035bda48f = $(`<div id="html_e0731b629ac3464fa5adf39035bda48f" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_10e0256e198b4af5a8a9bb1add2c9893.setContent(html_e0731b629ac3464fa5adf39035bda48f);
+        
+
+        circle_826cebd1e6a8421cb1534ed32b1a9625.bindPopup(popup_10e0256e198b4af5a8a9bb1add2c9893)
+        ;
+
+        
+    
+    
+            var circle_6a82e98b0d874574bfca4dda5d0319aa = L.circle(
+                [-8.494104538, 121.9042969],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_d30ea0bc4e33455db2477805972b31d1 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0d96ce6f402d4152ba36726c1cb50ac9 = $(`<div id="html_0d96ce6f402d4152ba36726c1cb50ac9" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_d30ea0bc4e33455db2477805972b31d1.setContent(html_0d96ce6f402d4152ba36726c1cb50ac9);
+        
+
+        circle_6a82e98b0d874574bfca4dda5d0319aa.bindPopup(popup_d30ea0bc4e33455db2477805972b31d1)
+        ;
+
+        
+    
+    
+            var circle_5080e565848e4b929c359b7a36d4a26b = L.circle(
+                [-7.14449885, 120.71777340000001],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_107866ecc8164cc9930d2dc5f65d3803 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1b6c91073c0e4095ae0c677743bccf2f = $(`<div id="html_1b6c91073c0e4095ae0c677743bccf2f" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_107866ecc8164cc9930d2dc5f65d3803.setContent(html_1b6c91073c0e4095ae0c677743bccf2f);
+        
+
+        circle_5080e565848e4b929c359b7a36d4a26b.bindPopup(popup_107866ecc8164cc9930d2dc5f65d3803)
+        ;
+
+        
+    
+    
+            var circle_2fe61ff7394a418ba2b4af8ff6b08d54 = L.circle(
+                [-5.703447982, 119.75097659999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_e24a205bab904bdb8a4a584212b5dc4e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_77cafdf4074641f3949f44a7c9c80270 = $(`<div id="html_77cafdf4074641f3949f44a7c9c80270" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_e24a205bab904bdb8a4a584212b5dc4e.setContent(html_77cafdf4074641f3949f44a7c9c80270);
+        
+
+        circle_2fe61ff7394a418ba2b4af8ff6b08d54.bindPopup(popup_e24a205bab904bdb8a4a584212b5dc4e)
+        ;
+
+        
+    
+    
+            var circle_82950ea81da94334925e72372669a52c = L.circle(
+                [-5.659718555, 119.8388672],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_bff170628fc34082954d935cce65a0ca = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a7002cb7fdd14afb99e9316fd2075be0 = $(`<div id="html_a7002cb7fdd14afb99e9316fd2075be0" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_bff170628fc34082954d935cce65a0ca.setContent(html_a7002cb7fdd14afb99e9316fd2075be0);
+        
+
+        circle_82950ea81da94334925e72372669a52c.bindPopup(popup_bff170628fc34082954d935cce65a0ca)
+        ;
+
+        
+    
+    
+            var circle_b40ffa1f352f44ef88d32ece6f5c4066 = L.circle(
+                [-5.397273407999999, 119.35546869999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_2c33dd5bf9514893bc5dd8548c446fb9 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_bcb2b553d2254c8f98eb23c62b1b97db = $(`<div id="html_bcb2b553d2254c8f98eb23c62b1b97db" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_2c33dd5bf9514893bc5dd8548c446fb9.setContent(html_bcb2b553d2254c8f98eb23c62b1b97db);
+        
+
+        circle_b40ffa1f352f44ef88d32ece6f5c4066.bindPopup(popup_2c33dd5bf9514893bc5dd8548c446fb9)
+        ;
+
+        
+    
+    
+            var circle_62df94bc47204a2782ed93a304e01259 = L.circle(
+                [-5.222246513, 119.39941409999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_49643168ed364edb8f6ca05b574a4b61 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1bdf6587263f4a1b804c2bb2d3a9ebee = $(`<div id="html_1bdf6587263f4a1b804c2bb2d3a9ebee" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_49643168ed364edb8f6ca05b574a4b61.setContent(html_1bdf6587263f4a1b804c2bb2d3a9ebee);
+        
+
+        circle_62df94bc47204a2782ed93a304e01259.bindPopup(popup_49643168ed364edb8f6ca05b574a4b61)
+        ;
+
+        
+    
+    
+            var circle_7cf0fcef653249a8929cfd24fead3ab6 = L.circle(
+                [-8.711358875, 116.1035156],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_a1d9c2ec43754eb0afcdc58d787bda84 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c2de5bcb4a8e4187a00c7e40ea4b8378 = $(`<div id="html_c2de5bcb4a8e4187a00c7e40ea4b8378" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_a1d9c2ec43754eb0afcdc58d787bda84.setContent(html_c2de5bcb4a8e4187a00c7e40ea4b8378);
+        
+
+        circle_7cf0fcef653249a8929cfd24fead3ab6.bindPopup(popup_a1d9c2ec43754eb0afcdc58d787bda84)
+        ;
+
+        
+    
+    
+            var circle_047c93db690b4b0e8ee79ff95d29dac6 = L.circle(
+                [-8.667918002, 116.58691409999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_e5b472ad0d5d49478c9c9c445a96b732 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d63d9b75a2c7487a981b99337b67a7e6 = $(`<div id="html_d63d9b75a2c7487a981b99337b67a7e6" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_e5b472ad0d5d49478c9c9c445a96b732.setContent(html_d63d9b75a2c7487a981b99337b67a7e6);
+        
+
+        circle_047c93db690b4b0e8ee79ff95d29dac6.bindPopup(popup_e5b472ad0d5d49478c9c9c445a96b732)
+        ;
+
+        
+    
+    
+            var circle_383938717a0e44c6b4033eac071e6d9d = L.circle(
+                [-8.146242825, 118.125],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_de9ae32e7acd4119853486a921e88dfa = L.popup({"maxWidth": "100%"});
+
+        
+            var html_94e53e1d4249440b8d8ad1ca6028693d = $(`<div id="html_94e53e1d4249440b8d8ad1ca6028693d" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_de9ae32e7acd4119853486a921e88dfa.setContent(html_94e53e1d4249440b8d8ad1ca6028693d);
+        
+
+        circle_383938717a0e44c6b4033eac071e6d9d.bindPopup(popup_de9ae32e7acd4119853486a921e88dfa)
+        ;
+
+        
+    
+    
+            var circle_b99ae946e99b4fbea04c715773359545 = L.circle(
+                [-8.320212289, 118.3886719],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_915d53b80b914a83be375bcf0166c53e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_23511a2ea3ac46b9932912b6fa2ebfec = $(`<div id="html_23511a2ea3ac46b9932912b6fa2ebfec" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_915d53b80b914a83be375bcf0166c53e.setContent(html_23511a2ea3ac46b9932912b6fa2ebfec);
+        
+
+        circle_b99ae946e99b4fbea04c715773359545.bindPopup(popup_915d53b80b914a83be375bcf0166c53e)
+        ;
+
+        
+    
+    
+            var circle_b9a153ff44f44c748db185ed08782291 = L.circle(
+                [-8.363692652000001, 118.69628909999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_402a2c2bf7b34f59aeaa8e34f556260b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_584471f8528a4760b250f7f83aae5b95 = $(`<div id="html_584471f8528a4760b250f7f83aae5b95" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_402a2c2bf7b34f59aeaa8e34f556260b.setContent(html_584471f8528a4760b250f7f83aae5b95);
+        
+
+        circle_b9a153ff44f44c748db185ed08782291.bindPopup(popup_402a2c2bf7b34f59aeaa8e34f556260b)
+        ;
+
+        
+    
+    
+            var circle_d21ff6c17e2d430ea17d57b67450803c = L.circle(
+                [-8.276727101, 118.95996090000001],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_ad9f074f097f46c688dd19c9fc0f2913 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e38dfc0b7c3f435c81703f8b25917b22 = $(`<div id="html_e38dfc0b7c3f435c81703f8b25917b22" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_ad9f074f097f46c688dd19c9fc0f2913.setContent(html_e38dfc0b7c3f435c81703f8b25917b22);
+        
+
+        circle_d21ff6c17e2d430ea17d57b67450803c.bindPopup(popup_ad9f074f097f46c688dd19c9fc0f2913)
+        ;
+
+        
+    
+    
+            var circle_42b5f1a5a0534ebdaaf3d5e4d054bb0f = L.circle(
+                [-8.928487063, 117.90527340000001],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_c54cfdbedbf141508d27d3dee0dccec0 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ae6bf51072dd466884da255512c29f8f = $(`<div id="html_ae6bf51072dd466884da255512c29f8f" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_c54cfdbedbf141508d27d3dee0dccec0.setContent(html_ae6bf51072dd466884da255512c29f8f);
+        
+
+        circle_42b5f1a5a0534ebdaaf3d5e4d054bb0f.bindPopup(popup_c54cfdbedbf141508d27d3dee0dccec0)
+        ;
+
+        
+    
+    
+            var circle_3ac774358eb742b48123a74278f3e546 = L.circle(
+                [-8.581021216, 116.6308594],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_8093a96d0c5f4e12871a19cc38e9767f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e0936101ae5e46729f1e28ff61dbe7f6 = $(`<div id="html_e0936101ae5e46729f1e28ff61dbe7f6" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_8093a96d0c5f4e12871a19cc38e9767f.setContent(html_e0936101ae5e46729f1e28ff61dbe7f6);
+        
+
+        circle_3ac774358eb742b48123a74278f3e546.bindPopup(popup_8093a96d0c5f4e12871a19cc38e9767f)
+        ;
+
+        
+    
+    
+            var circle_12235f8f58a645fa9c2d2835987b70bb = L.circle(
+                [-8.363692652000001, 117.8613281],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_a719ec48881641e2b9c294c53a08a605 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b7f16af48a5946268bdc86017b653bc6 = $(`<div id="html_b7f16af48a5946268bdc86017b653bc6" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_a719ec48881641e2b9c294c53a08a605.setContent(html_b7f16af48a5946268bdc86017b653bc6);
+        
+
+        circle_12235f8f58a645fa9c2d2835987b70bb.bindPopup(popup_a719ec48881641e2b9c294c53a08a605)
+        ;
+
+        
+    
+    
+            var circle_5d4adfe8865c445ab0f887262b23a4b0 = L.circle(
+                [-3.469557303, 119.4433594],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_86d06b8dfa334bce8532fdc4e1ce05ef = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7e92452bae9946259ccc7ff9b2ecfe2b = $(`<div id="html_7e92452bae9946259ccc7ff9b2ecfe2b" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_86d06b8dfa334bce8532fdc4e1ce05ef.setContent(html_7e92452bae9946259ccc7ff9b2ecfe2b);
+        
+
+        circle_5d4adfe8865c445ab0f887262b23a4b0.bindPopup(popup_86d06b8dfa334bce8532fdc4e1ce05ef)
+        ;
+
+        
+    
+    
+            var circle_ee305b5b40b04b4ca63e93bf0b3861cc = L.circle(
+                [-0.351560294, 99.93164062],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_5d6a1b862b304147bc3c315450705b25 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_cdefdf4a559f4a709af23e972964b6a9 = $(`<div id="html_cdefdf4a559f4a709af23e972964b6a9" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_5d6a1b862b304147bc3c315450705b25.setContent(html_cdefdf4a559f4a709af23e972964b6a9);
+        
+
+        circle_ee305b5b40b04b4ca63e93bf0b3861cc.bindPopup(popup_5d6a1b862b304147bc3c315450705b25)
+        ;
+
+        
+    
+    
+            var circle_3d9dc741ffac4406965febe1b8155ef5 = L.circle(
+                [-5.047170737, 103.7988281],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_6d5826cd4c984b4883e7713bc7ce8528 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a742bef3bd824462a9033e8803fdc99e = $(`<div id="html_a742bef3bd824462a9033e8803fdc99e" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_6d5826cd4c984b4883e7713bc7ce8528.setContent(html_a742bef3bd824462a9033e8803fdc99e);
+        
+
+        circle_3d9dc741ffac4406965febe1b8155ef5.bindPopup(popup_6d5826cd4c984b4883e7713bc7ce8528)
+        ;
+
+        
+    
+    
+            var circle_0bd5d875d3e941e5a8d4373d8bcbbd4f = L.circle(
+                [-5.047170737, 103.8427734],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_a0aa09843cad4eef8585ac79dcb21e8c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c37807bdf6b64914a316dd23afe91261 = $(`<div id="html_c37807bdf6b64914a316dd23afe91261" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_a0aa09843cad4eef8585ac79dcb21e8c.setContent(html_c37807bdf6b64914a316dd23afe91261);
+        
+
+        circle_0bd5d875d3e941e5a8d4373d8bcbbd4f.bindPopup(popup_a0aa09843cad4eef8585ac79dcb21e8c)
+        ;
+
+        
+    
+    
+            var circle_53a9abc190fb49cb9b83e478ad4e70a2 = L.circle(
+                [-5.309766172, 104.0185547],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_c23b817ecee1464bbca818ddf7a696ba = L.popup({"maxWidth": "100%"});
+
+        
+            var html_714204cb892f45bf9f988711786a17d2 = $(`<div id="html_714204cb892f45bf9f988711786a17d2" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_c23b817ecee1464bbca818ddf7a696ba.setContent(html_714204cb892f45bf9f988711786a17d2);
+        
+
+        circle_53a9abc190fb49cb9b83e478ad4e70a2.bindPopup(popup_c23b817ecee1464bbca818ddf7a696ba)
+        ;
+
+        
+    
+    
+            var circle_b81772f83f62458087e73700c116ee10 = L.circle(
+                [-5.790896813, 105.68847659999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_e16ddb8ad3374a82bf60d2a859e261c8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e235cd351bdb45668ac923e26174a16a = $(`<div id="html_e235cd351bdb45668ac923e26174a16a" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_e16ddb8ad3374a82bf60d2a859e261c8.setContent(html_e235cd351bdb45668ac923e26174a16a);
+        
+
+        circle_b81772f83f62458087e73700c116ee10.bindPopup(popup_e16ddb8ad3374a82bf60d2a859e261c8)
+        ;
+
+        
+    
+    
+            var circle_a8dd748150de466d9186a5842b9165ab = L.circle(
+                [-5.441022304, 105.24902340000001],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_3b8f1b6a661142c2838f74693b68eaf9 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a8a69988597a4ffd9ca13ada43b38f73 = $(`<div id="html_a8a69988597a4ffd9ca13ada43b38f73" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_3b8f1b6a661142c2838f74693b68eaf9.setContent(html_a8a69988597a4ffd9ca13ada43b38f73);
+        
+
+        circle_a8dd748150de466d9186a5842b9165ab.bindPopup(popup_3b8f1b6a661142c2838f74693b68eaf9)
+        ;
+
+        
+    
+    
+            var circle_a517c04cafc44b34bf8749b61f04e1ce = L.circle(
+                [-5.003394345, 103.7548828],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_da756e5de1f6494a8004a148b35e3f58 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6f37c92617b342dd9e32a48aaadd41d6 = $(`<div id="html_6f37c92617b342dd9e32a48aaadd41d6" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_da756e5de1f6494a8004a148b35e3f58.setContent(html_6f37c92617b342dd9e32a48aaadd41d6);
+        
+
+        circle_a517c04cafc44b34bf8749b61f04e1ce.bindPopup(popup_da756e5de1f6494a8004a148b35e3f58)
+        ;
+
+        
+    
+    
+            var circle_469904727f5f47ecbed4964b8a99b1dc = L.circle(
+                [-4.959615025, 103.7548828],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_230cca69d97749318b7fe3001ebc5b82 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ad89208077e0430787c80705279aab43 = $(`<div id="html_ad89208077e0430787c80705279aab43" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_230cca69d97749318b7fe3001ebc5b82.setContent(html_ad89208077e0430787c80705279aab43);
+        
+
+        circle_469904727f5f47ecbed4964b8a99b1dc.bindPopup(popup_230cca69d97749318b7fe3001ebc5b82)
+        ;
+
+        
+    
+    
+            var circle_f13cb4315695493f8db7ecf3bcd32ec6 = L.circle(
+                [-4.9158328010000005, 103.5791016],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_d5a94653ee504edfad6cd5c8a3c49f5c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b60caaa28e9042c4b24e6a0cbcc1afeb = $(`<div id="html_b60caaa28e9042c4b24e6a0cbcc1afeb" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_d5a94653ee504edfad6cd5c8a3c49f5c.setContent(html_b60caaa28e9042c4b24e6a0cbcc1afeb);
+        
+
+        circle_f13cb4315695493f8db7ecf3bcd32ec6.bindPopup(popup_d5a94653ee504edfad6cd5c8a3c49f5c)
+        ;
+
+        
+    
+    
+            var circle_f4ec1a7b90bc4b37915e85e1667fb1b6 = L.circle(
+                [-4.8720476999999995, 103.4472656],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_c00cb1ebda20430ca471dde34ccf7f78 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_fa4b431714ae4d34a1b070d277bdb005 = $(`<div id="html_fa4b431714ae4d34a1b070d277bdb005" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_c00cb1ebda20430ca471dde34ccf7f78.setContent(html_fa4b431714ae4d34a1b070d277bdb005);
+        
+
+        circle_f4ec1a7b90bc4b37915e85e1667fb1b6.bindPopup(popup_c00cb1ebda20430ca471dde34ccf7f78)
+        ;
+
+        
+    
+    
+            var circle_543e5456150b447bb7ecb3b61a7f31f2 = L.circle(
+                [-4.039617827, 102.3925781],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_9e2bac3b22454494bdeb1433944f7101 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_276bd299ff024df5bff0e2ee7a54c39e = $(`<div id="html_276bd299ff024df5bff0e2ee7a54c39e" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_9e2bac3b22454494bdeb1433944f7101.setContent(html_276bd299ff024df5bff0e2ee7a54c39e);
+        
+
+        circle_543e5456150b447bb7ecb3b61a7f31f2.bindPopup(popup_9e2bac3b22454494bdeb1433944f7101)
+        ;
+
+        
+    
+    
+            var circle_b975d1027f654a98ba675a64c4c41bf5 = L.circle(
+                [-4.083452772, 102.4365234],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_ad33f060c07249118784f76065aedffe = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e47e06bcddcc4d9696cf1cbe29c6373e = $(`<div id="html_e47e06bcddcc4d9696cf1cbe29c6373e" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_ad33f060c07249118784f76065aedffe.setContent(html_e47e06bcddcc4d9696cf1cbe29c6373e);
+        
+
+        circle_b975d1027f654a98ba675a64c4c41bf5.bindPopup(popup_ad33f060c07249118784f76065aedffe)
+        ;
+
+        
+    
+    
+            var circle_c0c2120eca114bd38d4aeb0d5f99da6a = L.circle(
+                [-2.899152698, 101.4257812],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_ad7583c831874e55b02c1accd92a49b4 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3ccacb9921264c75b88dd6f9da8421f0 = $(`<div id="html_3ccacb9921264c75b88dd6f9da8421f0" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_ad7583c831874e55b02c1accd92a49b4.setContent(html_3ccacb9921264c75b88dd6f9da8421f0);
+        
+
+        circle_c0c2120eca114bd38d4aeb0d5f99da6a.bindPopup(popup_ad7583c831874e55b02c1accd92a49b4)
+        ;
+
+        
+    
+    
+            var circle_a0f4beac0a4848dc891c2c721edc9a63 = L.circle(
+                [-3.6449998010000004, 102.2607422],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_ec5510a978f84599ada0a603e66c9014 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c4462963fbd749608b39ff1bdfa35d4d = $(`<div id="html_c4462963fbd749608b39ff1bdfa35d4d" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_ec5510a978f84599ada0a603e66c9014.setContent(html_c4462963fbd749608b39ff1bdfa35d4d);
+        
+
+        circle_a0f4beac0a4848dc891c2c721edc9a63.bindPopup(popup_ec5510a978f84599ada0a603e66c9014)
+        ;
+
+        
+    
+    
+            var circle_b2c3e26e25944c19921c34809160311f = L.circle(
+                [-4.127285323, 102.5244141],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_91560ab0c863495f897c0dda9f6dfcc5 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_740428b24b2d40289006766f1caf0ed6 = $(`<div id="html_740428b24b2d40289006766f1caf0ed6" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_91560ab0c863495f897c0dda9f6dfcc5.setContent(html_740428b24b2d40289006766f1caf0ed6);
+        
+
+        circle_b2c3e26e25944c19921c34809160311f.bindPopup(popup_91560ab0c863495f897c0dda9f6dfcc5)
+        ;
+
+        
+    
+    
+            var circle_0219978e82364e2f8787f1d2bf6389aa = L.circle(
+                [-7.1881008710000005, 106.5234375],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_4d7d5b37c6cb473899530a5646924d1c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9758bb0121c1482e972cd92048533c58 = $(`<div id="html_9758bb0121c1482e972cd92048533c58" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_4d7d5b37c6cb473899530a5646924d1c.setContent(html_9758bb0121c1482e972cd92048533c58);
+        
+
+        circle_0219978e82364e2f8787f1d2bf6389aa.bindPopup(popup_4d7d5b37c6cb473899530a5646924d1c)
+        ;
+
+        
+    
+    
+            var circle_d2a9a991f3594cf3b45eee486d57d4d3 = L.circle(
+                [-7.44962426, 107.09472659999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_0843418ff85546499c0901f6f90dee9d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1545d3d169f6457f8546405dc9aa9f11 = $(`<div id="html_1545d3d169f6457f8546405dc9aa9f11" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_0843418ff85546499c0901f6f90dee9d.setContent(html_1545d3d169f6457f8546405dc9aa9f11);
+        
+
+        circle_d2a9a991f3594cf3b45eee486d57d4d3.bindPopup(popup_0843418ff85546499c0901f6f90dee9d)
+        ;
+
+        
+    
+    
+            var circle_a1dc33178850428d9d8f0b05e5193cdd = L.circle(
+                [-7.406047717000001, 106.69921869999999],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_5dbd0ccb50e64a25a2e1d0feb46450ab = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ccda5f9a3bdd4827b8795b247a0a90a6 = $(`<div id="html_ccda5f9a3bdd4827b8795b247a0a90a6" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_5dbd0ccb50e64a25a2e1d0feb46450ab.setContent(html_ccda5f9a3bdd4827b8795b247a0a90a6);
+        
+
+        circle_a1dc33178850428d9d8f0b05e5193cdd.bindPopup(popup_5dbd0ccb50e64a25a2e1d0feb46450ab)
+        ;
+
+        
+    
+    
+            var circle_1fa4e29f6d674b739841e44604d8cedc = L.circle(
+                [-7.44962426, 106.8310547],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_e21948635b694286b1e41cb90e728982 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b8653e7d20f640019e80a95b68b99770 = $(`<div id="html_b8653e7d20f640019e80a95b68b99770" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_e21948635b694286b1e41cb90e728982.setContent(html_b8653e7d20f640019e80a95b68b99770);
+        
+
+        circle_1fa4e29f6d674b739841e44604d8cedc.bindPopup(popup_e21948635b694286b1e41cb90e728982)
+        ;
+
+        
+    
+    
+            var circle_2a5ecf00f8f444a3a2890437e30ffab2 = L.circle(
+                [-7.406047717000001, 106.7871094],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_9bfd2eb5c0324a068a7fd36fc4ff0729 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c7ef8265ce8c4bf88bfc257e2c460222 = $(`<div id="html_c7ef8265ce8c4bf88bfc257e2c460222" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_9bfd2eb5c0324a068a7fd36fc4ff0729.setContent(html_c7ef8265ce8c4bf88bfc257e2c460222);
+        
+
+        circle_2a5ecf00f8f444a3a2890437e30ffab2.bindPopup(popup_9bfd2eb5c0324a068a7fd36fc4ff0729)
+        ;
+
+        
+    
+    
+            var circle_65591e2755624494880b95335c0f4d91 = L.circle(
+                [-7.44962426, 107.1386719],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_d9a6f738b64d40ffb09b323957bb0e59 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9fdc0800839746d2883aab5add28bc8b = $(`<div id="html_9fdc0800839746d2883aab5add28bc8b" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_d9a6f738b64d40ffb09b323957bb0e59.setContent(html_9fdc0800839746d2883aab5add28bc8b);
+        
+
+        circle_65591e2755624494880b95335c0f4d91.bindPopup(popup_d9a6f738b64d40ffb09b323957bb0e59)
+        ;
+
+        
+    
+    
+            var circle_528efef22f994303911495dfad50fda1 = L.circle(
+                [5.594013163, 95.65795898],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_7a0421bdd78f422b8ae01b9e10828e0c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d2c3d4f3cd9a40e7a1e5a76fea182530 = $(`<div id="html_d2c3d4f3cd9a40e7a1e5a76fea182530" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_7a0421bdd78f422b8ae01b9e10828e0c.setContent(html_d2c3d4f3cd9a40e7a1e5a76fea182530);
+        
+
+        circle_528efef22f994303911495dfad50fda1.bindPopup(popup_7a0421bdd78f422b8ae01b9e10828e0c)
+        ;
+
+        
+    
+    
+            var circle_82de9b6ee64c4aa3a83ed91c7e19dbf8 = L.circle(
+                [5.550067865, 95.77880859],
+                {"bubblingMouseEvents": true, "color": "#7FFF5F", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7FFF5F", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_dd39afbbc6584b7eb9914bcf13fe58a3);
+        
+    
+        var popup_60689731e5aa40c7aabd28162ba7d58e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8ba098e5149b4714954646626b4cd4d4 = $(`<div id="html_8ba098e5149b4714954646626b4cd4d4" style="width: 100.0%; height: 100.0%;">Pasir Besi</div>`)[0];
+            popup_60689731e5aa40c7aabd28162ba7d58e.setContent(html_8ba098e5149b4714954646626b4cd4d4);
+        
+
+        circle_82de9b6ee64c4aa3a83ed91c7e19dbf8.bindPopup(popup_60689731e5aa40c7aabd28162ba7d58e)
+        ;
+
+        
+    
+    
+            map_dd39afbbc6584b7eb9914bcf13fe58a3.fitBounds(
+                [[-9.795677583, 95.65795898], [5.594013163, 139.6582031]],
+                {}
+            );
+        
+</script>
